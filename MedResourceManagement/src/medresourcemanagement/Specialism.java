@@ -7,8 +7,9 @@ package medresourcemanagement;
 
 /**
  *
- * @author b00720507
+ * @author Gordo
  */
-public class IntensiveCareMedicine extends Doctor {
-    
+public enum Specialism {
+    Cardiology, Pulmonology, InfectiousDisease,Hematology, IntensiveCareMedicine,
+    Neurology, Ophthalmology,Orthopedics,Urology,Surgery
 }

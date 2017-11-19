@@ -10,5 +10,5 @@ package medresourcemanagement;
  * @author b00720507
  */
 public class Surgery extends Doctor{
-    
+    public String DateOfLatestCert;
 }

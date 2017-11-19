@@ -17,6 +17,8 @@ public class MedResourceManagement {
     public static void main(String[] args) {
         Register reg = new Register();
         
+        
+        
     }
     
 }

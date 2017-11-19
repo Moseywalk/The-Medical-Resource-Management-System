@@ -7,8 +7,11 @@ package medresourcemanagement;
 
 /**
  *
- * @author b00720507
+ * @author Gordo
  */
-public class IntensiveCareMedicine extends Doctor {
+public enum PrefContact {
+    Telephone,
+    Skype,
+    Facetime
     
 }

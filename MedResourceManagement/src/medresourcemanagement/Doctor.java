@@ -10,9 +10,20 @@ package medresourcemanagement;
  * @author b00720507
  */
 public abstract class Doctor {
-    public String firstName;
-    public String lastName;
-    //language?
+    protected String name;
+    protected String contactAddress;
+    protected PrefContact contact;
+    protected String contactID;
+    protected Specialism specialism;
     
+    
+    protected TimesAvailaby timesAva;
+    
+   
+   public String toString(){
+       String out;
+       out=name+","+contactAddress+","+contact+","+contactID+","+specialism;
+       return out;
+   } 
    
 }
