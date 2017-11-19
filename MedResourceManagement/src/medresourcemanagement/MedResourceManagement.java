@@ -15,10 +15,19 @@ public class MedResourceManagement {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Register reg = new Register();
-        
-        
-        
+        MedResourceManagement mrm = new MedResourceManagement();
+        mrm.setUpObjs();
+
     }
-    
+
+    public void setUpObjs() {
+        Register reg = new Register();
+        //example new surgeon 
+        Doctor s = new Surgery();
+        Doctor t = new Cardiology();
+        reg.addToRegister(s);
+        reg.addToRegister(t);
+        reg.deleteFromRegister("Gordon");
+      
+    }
 }

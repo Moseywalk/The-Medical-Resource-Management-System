@@ -5,10 +5,40 @@
  */
 package medresourcemanagement;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author b00720507
  */
-public class Surgery extends Doctor{
+public class Surgery extends Doctor {
+
     public String DateOfLatestCert;
+
+    public Surgery() {
+        super();
+        setSpecialism();
+
+    }
+
+    @Override
+    public final void setSpecialism() {
+        this.specialism = Specialism.Surgery;
+    }
+
+    @Override
+    public String toString() {
+        String out;
+        out = name + "," + contactAddress + "," + contact + "," + contactID + "," + specialism + "," + DateOfLatestCert;
+        return out;
+    }
+
+    public void setInfo() {
+
+        name = JOptionPane.showInputDialog("Enter name");
+        contactAddress = JOptionPane.showInputDialog("Enter Address");
+        contact = (PrefContact.valueOf(JOptionPane.showInputDialog("Select contact type (Telephone/Skype/Facetime")));
+        contactID = JOptionPane.showInputDialog("Enter contact info");
+        DateOfLatestCert = JOptionPane.showInputDialog("Enter date of latest Cert");
+    }
 }

@@ -10,5 +10,15 @@ package medresourcemanagement;
  * @author b00720507
  */
 public class Hematology extends Doctor {
+        
+    
+    public Hematology(){
+        super();
+        setSpecialism();
+    }
+    @Override
+    public void setSpecialism() {
+        this.specialism = Specialism.Hematology;
+    }
     
 }

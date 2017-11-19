@@ -5,6 +5,8 @@
  */
 package medresourcemanagement;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author b00720507
@@ -19,11 +21,27 @@ public abstract class Doctor {
     
     protected TimesAvailaby timesAva;
     
+    public Doctor(){
+        
+    }
    
    public String toString(){
        String out;
        out=name+","+contactAddress+","+contact+","+contactID+","+specialism;
        return out;
    } 
+   public abstract void setSpecialism();
+   
+   public void setInfo(){
+       name = JOptionPane.showInputDialog("Enter name");
+       contactAddress = JOptionPane.showInputDialog("Enter Address");
+   
+       contact = (PrefContact.valueOf(JOptionPane.showInputDialog("Select contact type (Telephone/Skype/Facetime")));
+       
+      
+       contactID = JOptionPane.showInputDialog("Enter contact info");
+       
+   }
+   
    
 }

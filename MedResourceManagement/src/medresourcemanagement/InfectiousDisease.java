@@ -9,6 +9,16 @@ package medresourcemanagement;
  *
  * @author b00720507
  */
-public class InfectiousDisease extends Doctor{
-    
+public class InfectiousDisease extends Doctor {
+
+    public InfectiousDisease() {
+        super();
+        setSpecialism();
+    }
+
+    @Override
+    public final void setSpecialism() {
+        this.specialism = Specialism.InfectiousDisease;
+    }
+
 }
