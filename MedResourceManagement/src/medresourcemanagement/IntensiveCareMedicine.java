@@ -18,7 +18,7 @@ public class IntensiveCareMedicine extends Doctor {
 
     @Override
     public final void setSpecialism() {
-        this.specialism = Specialism.IntensiveCareMedicine;
+        this.specialism = Specialism.INTENSIVE_CARE_MEDICINE;
     }
     
 }

@@ -18,7 +18,7 @@ public class Neurology extends Doctor {
     }
     @Override
     public void setSpecialism() {
-        this.specialism = Specialism.Neurology;
+        this.specialism = Specialism.NEUROLOGY;
     }
     
 }

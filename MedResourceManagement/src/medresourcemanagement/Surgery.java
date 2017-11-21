@@ -23,7 +23,7 @@ public class Surgery extends Doctor {
 
     @Override
     public final void setSpecialism() {
-        this.specialism = Specialism.Surgery;
+        this.specialism = Specialism.SURGERY;
     }
 
     @Override
@@ -33,6 +33,7 @@ public class Surgery extends Doctor {
         return out;
     }
 
+    @Override
     public void setInfo() {
 
         name = JOptionPane.showInputDialog("Enter name");
