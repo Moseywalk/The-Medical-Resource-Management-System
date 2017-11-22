@@ -9,9 +9,7 @@ package medresourcemanagement;
  *
  * @author Gordo
  */
-public enum PrefContact {
-    TELEPHONE,
-    SKYPE,
-    FACETIME
-    
+public enum Specialism {
+    CARDIOLOGY, PULMONOLOGY, INFECTIOUS_DISEASE,HEMATOLOGY, INTENSIVE_CARE_MEDICINE,
+    NEUROLOGY, OPHTHALMOLOGY,ORTHOPEDICS,UROLOGY,SURGERY
 }

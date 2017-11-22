@@ -18,7 +18,6 @@ public class Surgery extends Doctor {
     public Surgery() {
         super();
         setSpecialism();
-        setInfo();
 
     }
 
@@ -28,21 +27,19 @@ public class Surgery extends Doctor {
     }
 
     @Override
-    public final void setInfo() {
-
-        name = JOptionPane.showInputDialog("Enter name");
-        contactAddress = JOptionPane.showInputDialog("Enter Address");
-        String input = JOptionPane.showInputDialog("Select contact type (Telephone/Skype/Facetime");
-        String through = input.toUpperCase();
-        contact = (PrefContact.valueOf(through));
-        contactID = JOptionPane.showInputDialog("Enter contact info");
-        DateOfLatestCert = JOptionPane.showInputDialog("Enter date of latest Cert");
+    public String toString() {
+        String out;
+        out = name + "," + contactAddress + "," + contact + "," + contactID + "," + specialism + "," + DateOfLatestCert;
+        return out;
     }
 
     @Override
-    public String toString() {
-        String out;
-        out = name + "," + contactAddress + "," + contact + "," + contactID + "," + specialism + "," + DateOfLatestCert + "\n" + timesAva;
-        return out;
+    public void setInfo() {
+
+        name = JOptionPane.showInputDialog("Enter name");
+        contactAddress = JOptionPane.showInputDialog("Enter Address");
+        contact = (PrefContact.valueOf(JOptionPane.showInputDialog("Select contact type (Telephone/Skype/Facetime")));
+        contactID = JOptionPane.showInputDialog("Enter contact info");
+        DateOfLatestCert = JOptionPane.showInputDialog("Enter date of latest Cert");
     }
 }

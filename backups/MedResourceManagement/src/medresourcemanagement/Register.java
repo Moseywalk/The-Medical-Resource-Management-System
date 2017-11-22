@@ -42,7 +42,7 @@ class Register {
 
     public void addToRegister(Doctor doc) {
         //set Doctor info
-       
+        doc.setInfo();
         if (null != doc.specialism) //find input specialism
         {
             switch (doc.specialism) {

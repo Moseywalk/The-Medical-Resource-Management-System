@@ -10,8 +10,8 @@ package medresourcemanagement;
  * @author Gordo
  */
 public enum PrefContact {
-    TELEPHONE,
-    SKYPE,
-    FACETIME
+    Telephone,
+    Skype,
+    Facetime
     
 }
