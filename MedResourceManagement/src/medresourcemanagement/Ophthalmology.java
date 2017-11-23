@@ -7,11 +7,17 @@ package medresourcemanagement;
 
 /**
  *
- * @author Gordo
+ * @author b00720507
  */
-public enum PrefContact {
-    Telephone,
-    Skype,
-    Facetime
+public class Ophthalmology extends Doctor{
+    
+    public Ophthalmology(){
+        super();
+    }
+
+    @Override
+    public void setSpecialism() {
+        this.specialism = Specialism.Ophthalmology;
+    }
     
 }

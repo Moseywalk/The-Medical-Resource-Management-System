@@ -7,9 +7,10 @@ package medresourcemanagement;
 
 /**
  *
- * @author Gordo
+ * @author b00720507
  */
-public enum Specialism {
-    Cardiology, Pulmonology, InfectiousDisease,Hematology, IntensiveCareMedicine,
-    Neurology, Ophthalmology,Orthopedics,Urology,Surgery
+public class ReadAvailabilityTimes {
+    
+    
+    
 }

@@ -59,20 +59,5 @@ class TimesAvailaby {
     public void setSatTime() {
 
     }
-    
-    public String toString(){
-        String out;
-        out = "\nSunday: "+SundaySt+" "+SundayEt
-                +"\nMonday: "+MondaySt+" "+MondayEt
-                +"\nTuesday: "+TuesdaySt+" "+TuesdayEt
-                +"\nWedesday: "+WednesdaySt+" "+WednesdayEt
-                +"\nThursday: "+ThursdaySt+" "+ThursdayEt
-                +"\nFriday: "+FridaySt+" "+FridayEt
-                +"\nSaturday: "+SaturdaySt+" "+SaturdayEd;
-        return out;
-        
-    }
-    
-
 
 }
