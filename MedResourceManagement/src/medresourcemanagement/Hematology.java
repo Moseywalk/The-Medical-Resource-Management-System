@@ -17,8 +17,8 @@ public class Hematology extends Doctor {
         setSpecialism();
     }
     @Override
-    public void setSpecialism() {
-        this.specialism = Specialism.Hematology;
+    public final void setSpecialism() {
+        this.specialism = Specialism.HEMATOLOGY;
     }
     
 }

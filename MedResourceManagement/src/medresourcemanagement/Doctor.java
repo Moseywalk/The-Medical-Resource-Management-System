@@ -22,9 +22,10 @@ public abstract class Doctor {
     protected TimesAvailaby timesAva;
     
     public Doctor(){
-        timesAva = new TimesAvailaby();
+        
     }
    
+    @Override
    public String toString(){
        String out;
        out=name+","+contactAddress+","+contact+","+contactID+","+specialism;
@@ -35,13 +36,8 @@ public abstract class Doctor {
    public void setInfo(){
        name = JOptionPane.showInputDialog("Enter name");
        contactAddress = JOptionPane.showInputDialog("Enter Address");
-       contact = (PrefContact.valueOf(JOptionPane.showInputDialog("Select contact type (Telephone/Skype/Facetime")));
-       
-      
+       contact = (PrefContact.valueOf(JOptionPane.showInputDialog("Select contact type (Telephone/Skype/Facetime")));      
        contactID = JOptionPane.showInputDialog("Enter contact info");
-       
-   }
-   public void addAvailabilityTimes(){
        
    }
    

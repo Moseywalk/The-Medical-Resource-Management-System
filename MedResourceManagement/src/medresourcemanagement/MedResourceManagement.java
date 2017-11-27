@@ -5,7 +5,7 @@
  */
 package medresourcemanagement;
 
-import gui.MainPanel;
+import gui.Add;
 import gui.MyFrame;
 
 /**
@@ -26,15 +26,14 @@ public class MedResourceManagement {
     public void setUpObjs() {
         Register reg = new Register();
         MyFrame frame = new MyFrame();
-        frame.run();
-        MainPanel main = new MainPanel();
-      
+    
+        
         //example new surgeon 
-        Doctor s = new Surgery();
-        Doctor t = new Cardiology();
-        reg.addToRegister(s);
-        reg.addToRegister(t);
-        reg.deleteFromRegister("Gordon");
+//        Doctor s = new Surgery();
+//        Doctor t = new Cardiology();
+//        reg.addToRegister(s);
+//        reg.addToRegister(t);
+//        reg.deleteFromRegister("Gordon", reg.surgDocs);
       
     }
 }

@@ -18,7 +18,7 @@ public class Cardiology extends Doctor{
     
     @Override
     public final void setSpecialism() {
-        specialism = Specialism.Cardiology;
+        specialism = Specialism.CARDIOLOGY;
     }
     
 }

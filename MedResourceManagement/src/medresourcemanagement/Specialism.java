@@ -10,6 +10,6 @@ package medresourcemanagement;
  * @author Gordo
  */
 public enum Specialism {
-    Cardiology, Pulmonology, InfectiousDisease,Hematology, IntensiveCareMedicine,
-    Neurology, Ophthalmology,Orthopedics,Urology,Surgery
+    CARDIOLOGY, PULMONOLOGY, INFECTIOUS_DISEASE,HEMATOLOGY, INTENSIVE_CARE_MEDICINE,
+    NEUROLOGY, OPHTHALMOLOGY,ORTHOPEDICS,UROLOGY,SURGERY
 }
