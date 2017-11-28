@@ -93,7 +93,7 @@ class Register {
                     break;
                 case INTENSIVE_CARE_MEDICINE:
                     if (intNo <= 10) {
-                        infDocs[infNo] = (InfectiousDisease) doc;
+                        intDocs[intNo] = (IntensiveCareMedicine) doc;
                         intNo++;
                         docsNo++;
                         System.out.println(intDocs[intNo - 1]);
