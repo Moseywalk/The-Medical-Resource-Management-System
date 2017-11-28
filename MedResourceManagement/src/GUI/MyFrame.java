@@ -5,6 +5,9 @@
  */
 package gui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.imageio.spi.RegisterableService;
 import javax.swing.*;
 
 /**
@@ -27,9 +30,40 @@ public class MyFrame extends JFrame {
         menu.add(input);
         menu.add(delete);
         menu.add(availability);
+        input.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               Add doc = new Add();
+                setContentPane(doc);
+              
+                //gets rid of bug 
+               setSize(400,499);
+               setSize(400,500);
+                
+            }
+        });
+        delete.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               Delete del = new Delete();
+               setContentPane(del);
+              
+                setSize(400,499);
+                setSize(400,500);
+            }
+        });
+        availability.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+        
         Add newDoc = new Add();
         this.setContentPane(newDoc);
         
         this.setVisible(true);
     }
+
+
 }

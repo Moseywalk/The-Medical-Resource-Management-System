@@ -3,43 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package GUI;
 
-import javax.swing.JTextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import medresourcemanagement.Specialism;
 
 /**
  *
  * @author b00720507
  */
 public class Add extends javax.swing.JPanel {
-    private Register reg;
+
     /**
      * Creates new form Add
      */
     public Add() {
         initComponents();
-        //initiate objects
-         reg = new Register();
-
         SelectBox listen = new SelectBox(jComboBox2);
         jComboBox2.addActionListener(listen);
-        SelectBox listen2 = new SelectBox(jComboBox1);
+        SelectBox listen2 = new SelectBox(jComboBox1); 
         jComboBox1.addActionListener(listen2);
-
-        AddButtonListener abl = new AddButtonListener(listen, listen2, jTextField1, jTextField2, jTextField3, reg);
-        jButton1.addActionListener(abl);
-    }
-
-    public JTextField getNameInput() {
-        return this.jTextField1;
-    }
-
-    public JTextField getAddressInput() {
-        return this.jTextField2;
-    }
-
-    public JTextField getContactIDInput() {
-        return this.jTextField3;
+        
+        Specialism spec = Specialism.valueOf(listen.getOutput());
+        //add specalism to add
+        AddButton addToReg = new AddButton(spec);
+        jButton1.addActionListener(addToReg);
     }
 
     /**

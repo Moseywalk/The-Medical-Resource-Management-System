@@ -5,8 +5,8 @@
  */
 package medresourcemanagement;
 
-import gui.Add;
-import gui.MyFrame;
+import GUI.Add;
+import GUI.MyFrame;
 
 /**
  *
@@ -24,7 +24,7 @@ public class MedResourceManagement {
     }
 
     public void setUpObjs() {
-       Register reg = new Register();
+        Register reg = new Register();
         MyFrame frame = new MyFrame();
     
         

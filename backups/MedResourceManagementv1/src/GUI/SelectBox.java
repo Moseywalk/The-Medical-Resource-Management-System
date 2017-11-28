@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,21 +13,26 @@ import javax.swing.JComboBox;
  *
  * @author b00720507
  */
-public class SelectSpec implements ActionListener {
-
+public class SelectBox implements ActionListener {
+    private String out;
     JComboBox jComboBox2;
-    public SelectSpec(){
+    public SelectBox(){
         
     }
 
-    SelectSpec(JComboBox<String> jComboBox2) {
+    SelectBox(JComboBox<String> jComboBox2) {
         this.jComboBox2=jComboBox2;
     }
     @Override
     public void actionPerformed(ActionEvent e) {
    
                String out = (String) jComboBox2.getSelectedItem();
+               this.out = out;
                System.out.println(out);
+    }
+    
+    public String getOutput(){
+        return out;
     }
     
 }
