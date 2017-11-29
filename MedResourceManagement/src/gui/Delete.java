@@ -5,6 +5,20 @@
  */
 package gui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import medresourcemanagement.Cardiology;
+import medresourcemanagement.Doctor;
+import medresourcemanagement.Hematology;
+import medresourcemanagement.InfectiousDisease;
+import medresourcemanagement.IntensiveCareMedicine;
+import medresourcemanagement.Neurology;
+import medresourcemanagement.Ophthalmology;
+import medresourcemanagement.Orthopedics;
+import medresourcemanagement.Pulmonology;
+import medresourcemanagement.Surgery;
+import medresourcemanagement.Urology;
+
 /**
  *
  * @author b00720507
@@ -14,10 +28,67 @@ public class Delete extends javax.swing.JPanel {
     /**
      * Creates new form Delete
      */
+    private Register reg;
+
     public Delete() {
+
+    }
+
+    Delete(Register regIn) {
+        this.reg =regIn;
         initComponents();
-        SelectBox listen = new SelectBox();
+        SelectBox listen = new SelectBox(jComboBox1);
         jComboBox1.addActionListener(listen);
+   
+        jButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String spec = listen.getOutput();
+                if (spec != null) {
+
+                    switch (spec) {
+                        case "Cardiology":
+                            System.out.println("okay");
+                            reg.cardioOutput();
+
+                            break;
+                        case "Pulmonology":
+
+                            break;
+                        case "Infectious Disease":
+
+                            break;
+                        case "Hematology":
+
+                            break;
+                        case "Intensive Care Medicine":
+
+                            break;
+                        case "Neurology":
+
+                            break;
+                        case "Ophthalmology":
+
+                            break;
+                        case "Orthopedics":
+
+                            break;
+                        case "Urology":
+
+                            break;
+                        case "Surgery":
+
+                            break;
+
+                        default:
+
+                            break;
+
+                    }
+                }
+
+            }
+        });
     }
 
     /**
@@ -32,6 +103,7 @@ public class Delete extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cardiology", "Pulmonology", "Infectious Disease", "Hematology", "Intensive Care Medicine", "Neurology", "Ophthalmology", "Orthopedics", "Urology", "Surgery" }));
         jComboBox1.setSelectedIndex(-1);
@@ -39,6 +111,8 @@ public class Delete extends javax.swing.JPanel {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel1.setText("Select Speciality ");
+
+        jButton1.setText("Delete");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -52,6 +126,10 @@ public class Delete extends javax.swing.JPanel {
                         .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(137, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(64, 64, 64))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -62,12 +140,15 @@ public class Delete extends javax.swing.JPanel {
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72)
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(43, 43, 43))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;

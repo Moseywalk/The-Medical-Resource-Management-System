@@ -21,4 +21,5 @@ public class Cardiology extends Doctor{
         specialism = Specialism.CARDIOLOGY;
     }
     
+    
 }

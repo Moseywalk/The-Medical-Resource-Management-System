@@ -29,7 +29,7 @@ public abstract class Doctor {
     @Override
     public String toString() {
         String out;
-        out = name + "," + contactAddress + "," + contact + "," + contactID + "," + specialism;
+        out ="\n"+ name + "," + contactAddress + "," + contact + "," + contactID + "," + specialism;
         return out;
     }
 

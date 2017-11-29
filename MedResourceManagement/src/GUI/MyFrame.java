@@ -7,7 +7,6 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.imageio.spi.RegisterableService;
 import javax.swing.*;
 
 /**
@@ -15,10 +14,13 @@ import javax.swing.*;
  * @author b00720507
  */
 public class MyFrame extends JFrame {
+    
+    public Register reg;
     public MyFrame(){
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocation(300, 350);
         this.setSize(400,450);
+        reg = new Register();
 
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("File");
@@ -33,7 +35,7 @@ public class MyFrame extends JFrame {
         input.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               Add doc = new Add();
+               Add doc = new Add(reg);
                 setContentPane(doc);
               
                 //gets rid of bug 
@@ -45,7 +47,7 @@ public class MyFrame extends JFrame {
         delete.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               Delete del = new Delete();
+               Delete del = new Delete(reg);
                setContentPane(del);
               
                 setSize(400,499);
@@ -59,7 +61,7 @@ public class MyFrame extends JFrame {
             }
         });
         
-        Add newDoc = new Add();
+        Add newDoc = new Add(reg);
         this.setContentPane(newDoc);
         
         this.setVisible(true);

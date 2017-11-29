@@ -24,7 +24,7 @@ public class MedResourceManagement {
     }
 
     public void setUpObjs() {
-       Register reg = new Register();
+       
         MyFrame frame = new MyFrame();
     
         

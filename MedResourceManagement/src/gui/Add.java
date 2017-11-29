@@ -17,9 +17,13 @@ public class Add extends javax.swing.JPanel {
      * Creates new form Add
      */
     public Add() {
+       
+    }
+
+    public Add(Register reg) {
         initComponents();
         //initiate objects
-         reg = new Register();
+         this.reg = reg;
 
         SelectBox listen = new SelectBox(jComboBox2);
         jComboBox2.addActionListener(listen);

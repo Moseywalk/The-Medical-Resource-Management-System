@@ -187,5 +187,14 @@ class Register {
 
         return index;
     }
+    public String cardioOutput(){
+        String out="";
+       for (int x=0; x<cardioNo;x++){
+           out = cardioDocs[x].getName();
+           System.out.println(cardioDocs[x]+ "output");
+           
+       } 
+       return out;
+    }
 
 }
