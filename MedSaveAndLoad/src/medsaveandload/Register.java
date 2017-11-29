@@ -189,4 +189,14 @@ class Register {
         s.writeToFile(this);
     }
 
+    void loadFromFile() {
+        ReadAndLoad rAndL = null;
+        
+        try {
+             rAndL = new ReadAndLoad(this);
+        } catch (IOException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

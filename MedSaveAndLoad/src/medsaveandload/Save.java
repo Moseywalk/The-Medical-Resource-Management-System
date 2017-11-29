@@ -23,6 +23,7 @@ public class Save {
        //OUTPUT for CARDIO
        //when it comes to real thing remove system.out for fileWriter methods
       out.println("CARDIOLOGY");
+      out.println(reg.cardioNo);
        for (int x=0;x<reg.cardioNo;x++){ 
           out.println(reg.cardioDocs[x]);
            
@@ -31,6 +32,7 @@ public class Save {
        //OUTPUT for CARDIO
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("PULMONOLOGY");
+       out.println(reg.pulmNo);
        for (int x=0;x<reg.pulmNo;x++){
            out.println(reg.pulmDocs[x]);
         
@@ -39,6 +41,7 @@ public class Save {
        //OUTPUT for INFECTIOUS_DISEASE
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("INFECTIOUS_DISEASE");
+       out.println(reg.infNo);
        for (int x=0;x<reg.infNo;x++){
            out.println(reg.infDocs[x]);
          
@@ -47,6 +50,7 @@ public class Save {
        //OUTPUT for CARDIO
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("HEMATOLOGY");
+       out.print(reg.hemNo);
        for (int x=0;x<reg.hemNo;x++){
           out.println(reg.hemDocs[x]);
         
@@ -55,6 +59,7 @@ public class Save {
        //OUTPUT for INTENSIVE_CARE_MEDICINE
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("INTENSIVE_CARE_MEDICINE");
+       out.println(reg.infNo);
        for (int x=0;x<reg.infNo;x++){
           out.println(reg.infDocs[x]);
          
@@ -63,6 +68,7 @@ public class Save {
        //OUTPUT for NEUROLOGY
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("NEUROLOGY");
+       out.println(reg.neuroNo);
        for (int x=0;x<reg.neuroNo;x++){
            out.println(reg.neuroDocs[x]);
         
@@ -71,6 +77,7 @@ public class Save {
        //OUTPUT for OPHTHALMOLOGY
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("OPHTHALMOLOGY");
+       out.println(reg.eyeNo);
        for (int x=0;x<reg.eyeNo;x++){
            out.println(reg.eyeDocs[x]);
         
@@ -79,6 +86,7 @@ public class Save {
        //OUTPUT for ORTHOPEDICS
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("ORTHOPEDICS");
+       out.println(reg.orthoNo);
        for (int x=0;x<reg.orthoNo;x++){
  out.println(reg.orthoDocs[x]);
          
@@ -87,6 +95,7 @@ public class Save {
        //OUTPUT for UROLOGY
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("UROLOGY");
+       out.println(reg.uroNo);
        for (int x=0;x<reg.uroNo;x++){
          out.println(reg.uroDocs[x]);
           
@@ -95,6 +104,7 @@ public class Save {
         //OUTPUT for SURGERY
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("SURGERY");
+       out.println(reg.surgNo);
        for (int x=0;x<reg.surgNo;x++){
           out.println(reg.surgDocs[x]);
           
