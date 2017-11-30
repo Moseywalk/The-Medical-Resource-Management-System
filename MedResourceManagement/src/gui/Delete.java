@@ -7,17 +7,7 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import medresourcemanagement.Cardiology;
-import medresourcemanagement.Doctor;
-import medresourcemanagement.Hematology;
-import medresourcemanagement.InfectiousDisease;
-import medresourcemanagement.IntensiveCareMedicine;
-import medresourcemanagement.Neurology;
-import medresourcemanagement.Ophthalmology;
-import medresourcemanagement.Orthopedics;
-import medresourcemanagement.Pulmonology;
-import medresourcemanagement.Surgery;
-import medresourcemanagement.Urology;
+import medresourcemanagement.*;
 
 /**
  *
@@ -34,10 +24,10 @@ public class Delete extends javax.swing.JPanel {
 
     }
 
-    Delete(Register regIn) {
-        this.reg =regIn;
+    Delete(Register reg) {
+        this.reg =reg;
         initComponents();
-        SelectBox listen = new SelectBox(jComboBox1);
+        DeleteBox listen = new DeleteBox(jComboBox1, jComboBox2);
         jComboBox1.addActionListener(listen);
    
         jButton1.addActionListener(new ActionListener() {
@@ -113,6 +103,11 @@ public class Delete extends javax.swing.JPanel {
         jLabel1.setText("Select Speciality ");
 
         jButton1.setText("Delete");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -145,6 +140,10 @@ public class Delete extends javax.swing.JPanel {
                 .addGap(43, 43, 43))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

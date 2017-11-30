@@ -44,10 +44,12 @@ class Register {
     public Register() {
 
     }
+    
 
     public void addToRegister(Doctor doc) {
         //set Doctor info
         //doc.setInfo();
+        System.out.println("Adding to register");
         if (null != doc.specialism) //find input specialism
         {
             switch (doc.specialism) {

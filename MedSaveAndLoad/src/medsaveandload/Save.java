@@ -50,7 +50,7 @@ public class Save {
        //OUTPUT for CARDIO
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("HEMATOLOGY");
-       out.print(reg.hemNo);
+       out.println(reg.hemNo);
        for (int x=0;x<reg.hemNo;x++){
           out.println(reg.hemDocs[x]);
         

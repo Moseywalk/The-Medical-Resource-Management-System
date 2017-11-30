@@ -3,11 +3,13 @@ CARDIOLOGY
 Gordon,address,Skype,oasdas,CARDIOLOGY
 werwer,address,Skype,oasdas,CARDIOLOGY
 PULMONOLOGY
-0
+1
+werwer,address,Skype,oasdas,PULMONOLOGY
 INFECTIOUS_DISEASE
 0
 HEMATOLOGY
-1null,null,null,null,HEMATOLOGY
+1
+werwer,address,Skype,oasdas,HEMATOLOGY
 INTENSIVE_CARE_MEDICINE
 0
 NEUROLOGY
@@ -20,4 +22,4 @@ UROLOGY
 0
 SURGERY
 1
-name,address,Skype,oasdas,SURGERY,12/12/12
+name,address,Skype,oasdas,SURGERY,13/13/13

@@ -22,12 +22,15 @@ public class MedSaveAndLoad {
        Cardiology gor = new Cardiology();
        gor.setInfo(null,"Skype","werwer","address","oasdas");
        Hematology qwe = new Hematology();
-       gor.setInfo(null,"Skype","werwer","address","oasdas");
+       Pulmonology wer = new Pulmonology();
+       wer.setInfo(null,"Skype","werwer","address","oasdas");
+       qwe.setInfo(null,"Skype","werwer","address","oasdas");
        Surgery zxc = new Surgery();
        zxc.setInfo(null,"Skype","name","address","oasdas");
        reg.addToRegister(card);
        reg.addToRegister(gor);
        reg.addToRegister(qwe);
+       reg.addToRegister(wer);
        reg.addToRegister(zxc);
        
        reg.saveToFile();
