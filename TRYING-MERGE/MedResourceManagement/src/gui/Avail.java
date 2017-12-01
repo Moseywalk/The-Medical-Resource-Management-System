@@ -18,10 +18,8 @@ import javax.swing.JPanel;
  */
 public class Avail extends javax.swing.JPanel {
         private Register reg;
+        private boolean isAvailable;
   
-        
-
-        
         public Avail(){
         }
 
@@ -35,17 +33,39 @@ public class Avail extends javax.swing.JPanel {
         
         SelectBox listen = new SelectBox(jComboBox1);
         jComboBox1.addActionListener(listen);
-        
-        
-        
-      
-
-                       
+                   
     }
     
-    public void displayNow(){
- 
+    public void displayDoc(){
+                 
+            jLabel1.setText("Dr. Drake McCormick");
+            
+//            if(isAvailable == checkTimes)
+//            {
+//                jLabel1.setText(checkTimes);
+//            }
         
+
+    }
+    
+       public void displayOld(){
+                 
+            jLabel1.setText("Doc");
+            
+//            if(isAvailable == checkTimes)
+//            {
+//                jLabel1.setText(checkTimes);
+//            }
+        
+
+    }
+    
+    public void displayColourRed(){
+        jTextField2.setBackground(Color.red);
+    }
+    
+      public void displayColourGreen(){
+        jTextField2.setBackground(Color.green);
     }
 
 
@@ -133,31 +153,31 @@ public class Avail extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Doc 1");
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setText("Doc 2");
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("Doc 3");
 
-        jLabel5.setText("jLabel5");
+        jLabel5.setText("Doc 4");
 
-        jLabel6.setText("jLabel6");
+        jLabel6.setText("Doc 6");
 
-        jLabel7.setText("jLabel7");
+        jLabel7.setText("Doc 7");
 
-        jLabel8.setText("jLabel8");
+        jLabel8.setText("Doc 8");
 
-        jLabel9.setText("jLabel9");
+        jLabel9.setText("Doc 9");
 
-        jLabel10.setText("jLabel10");
+        jLabel10.setText("Doc 5");
 
-        jLabel11.setText("jLabel11");
+        jLabel11.setText("Doc 10");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
@@ -191,7 +211,7 @@ public class Avail extends javax.swing.JPanel {
                     .addComponent(jLabel7)
                     .addComponent(jLabel6)
                     .addComponent(jLabel11))
-                .addGap(142, 142, 142))
+                .addGap(36, 36, 36))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,7 +246,7 @@ public class Avail extends javax.swing.JPanel {
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -234,25 +254,22 @@ public class Avail extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(41, 41, 41)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGap(84, 84, 84)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton1)))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,16 +282,30 @@ public class Avail extends javax.swing.JPanel {
                     .addComponent(jButton1))
                 .addGap(18, 18, 18)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
        	if(jComboBox1.getSelectedItem().toString().equals("Cardiology"))
         {
-            displayNow();
+            displayDoc();
+            displayColourRed();
 
+        }
+        
+        else if (jComboBox1.getSelectedItem().toString().equals("Pulmonology"))
+        {
+            displayDoc();
+            displayColourRed();
+
+        }
+        
+        else{
+            displayOld();
+            displayColourGreen();
         }
 
     }//GEN-LAST:event_jComboBox1ActionPerformed
@@ -291,7 +322,7 @@ public class Avail extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        
+       
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed

@@ -8,7 +8,7 @@ package gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-
+import medresourcemanagement.*;
 
 /**
  *
@@ -21,7 +21,10 @@ public class MyFrame extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocation(300, 350);
         this.setSize(400,450);
+        
         reg = new Register();
+        reg.loadFromFile();
+       
 
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("File");
@@ -73,13 +76,10 @@ public class MyFrame extends JFrame {
         });
         
         Add newDoc = new Add(reg);
-        this.setContentPane(newDoc);
+        Test test = new Test();
+        this.setContentPane(test);
         
         this.setVisible(true);
-
-//        Login newLogin = new Login(reg);
-//        this.setContentPane(newLogin);
-//        this.setVisible(true);
     }
 
 

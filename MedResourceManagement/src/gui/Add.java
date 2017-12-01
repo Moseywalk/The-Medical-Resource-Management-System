@@ -6,7 +6,6 @@
 package gui;
 
 import javax.swing.JTextField;
-import medresourcemanagement.*;
 
 /**
  *

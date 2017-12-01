@@ -29,7 +29,7 @@ public abstract class Doctor {
     @Override
     public String toString() {
         String out;
-        out ="\n"+ name + "," + contactAddress + "," + contact + "," + contactID + "," + specialism;
+        out = name + "," + contactAddress + "," + contact + "," + contactID + "," + specialism;
         return out;
     }
 
@@ -62,10 +62,6 @@ public abstract class Doctor {
     public String getContactAddress() {
         return this.contactAddress;
     }
-
-
-
-
 
     public void setInfo(String spec, String contactStyle, String s_name, String s_address, String s_contact) {
         name = s_name;

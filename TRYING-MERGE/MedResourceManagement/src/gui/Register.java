@@ -4,50 +4,67 @@
  * and open the template in the editor.
  */
 package gui;
+
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
-import medresourcemanagement.*;
+import medresourcemanagement.Cardiology;
+import medresourcemanagement.Doctor;
+import medresourcemanagement.Hematology;
+import medresourcemanagement.InfectiousDisease;
+import medresourcemanagement.IntensiveCareMedicine;
+import medresourcemanagement.Neurology;
+import medresourcemanagement.Ophthalmology;
+import medresourcemanagement.Orthopedics;
+import medresourcemanagement.Pulmonology;
+import medresourcemanagement.ReadAndLoad;
+import medresourcemanagement.Save;
+import medresourcemanagement.Specialism;
+import medresourcemanagement.Surgery;
+import medresourcemanagement.Urology;
 
 /**
  *
  * @author b00720507
  */
-class Register {
-    JPanel inputs;
-    Cardiology[] cardioDocs = new Cardiology[10];
-    int cardioNo = 0;
-    Pulmonology[] pulmDocs = new Pulmonology[10];
-    int pulmNo = 0;
-    InfectiousDisease[] infDocs = new InfectiousDisease[10];
-    int infNo = 0;
-    Hematology[] hemDocs = new Hematology[10];
-    int hemNo = 0;
-    IntensiveCareMedicine[] intDocs = new IntensiveCareMedicine[10];
-    int intNo = 0;
+public class Register {
+
+    private JPanel inputs;
+    public Cardiology[] cardioDocs = new Cardiology[10];
+    public int cardioNo = 0;
+    public Pulmonology[] pulmDocs = new Pulmonology[10];
+    public int pulmNo = 0;
+    public InfectiousDisease[] infDocs = new InfectiousDisease[10];
+   public  int infNo = 0;
+    public Hematology[] hemDocs = new Hematology[10];
+   public  int hemNo = 0;
+   public  IntensiveCareMedicine[] intDocs = new IntensiveCareMedicine[10];
+   public  int intNo = 0;
     //break
-    Neurology[] neuroDocs = new Neurology[10];
-    int neuroNo = 0;
-    Ophthalmology[] eyeDocs = new Ophthalmology[10];
-    int eyeNo = 0;
-    Orthopedics[] orthoDocs = new Orthopedics[10];
-    int orthoNo = 0;
-    Urology[] uroDocs = new Urology[10];
-    int uroNo = 0;
-    Surgery[] surgDocs = new Surgery[10];
-    int surgNo = 0;
+   public  Neurology[] neuroDocs = new Neurology[10];
+    public int neuroNo = 0;
+    public Ophthalmology[] eyeDocs = new Ophthalmology[10];
+    public int eyeNo = 0;
+    public Orthopedics[] orthoDocs = new Orthopedics[10];
+    public int orthoNo = 0;
+   public  Urology[] uroDocs = new Urology[10];
+   public  int uroNo = 0;
+    public Surgery[] surgDocs = new Surgery[10];
+   public  int surgNo = 0;
     //list of Doctors
-   // Doctor[] docs = new Doctor[100];
-    
+    // Doctor[] docs = new Doctor[100];
+
     int docsNo = 0;
 
     public Register() {
 
     }
 
- 
-
     public void addToRegister(Doctor doc) {
-        
+
         Specialism s = doc.getSpecialism();
+        System.out.println("Adding to register");
         if (null != doc.getSpecialism()) //find input specialism
         {
             switch (s) {
@@ -156,11 +173,11 @@ class Register {
 
             }
         }
-        
+        //save
 
     }
 
-    public void deleteFromRegister(String name,Doctor[] docArray) {
+    public void deleteFromRegister(String name, Doctor[] docArray) {
         //search register for index
         try {
             int index = this.searchReg(name, docArray);
@@ -177,7 +194,7 @@ class Register {
         int index = 0;
         for (int x = 0; x < docArray.length; x++) {
 
-            if (docArray[x].getName().equals(name)||docArray[x].getName().contains(name)) {
+            if (docArray[x].getName().equals(name) || docArray[x].getName().contains(name)) {
                 // found it!
                 System.out.println("found it at " + x);
                 index = x;
@@ -187,14 +204,35 @@ class Register {
 
         return index;
     }
-    public String cardioOutput(){
-        String out="";
-       for (int x=0; x<cardioNo;x++){
-           out = cardioDocs[x].getName();
-           System.out.println(cardioDocs[x]);
-           
-       } 
-       return out;
+
+    public void saveToFile() {
+        Save s = null;
+        try {
+            s = new Save();
+        } catch (IOException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        s.writeToFile(this);
+    }
+
+    public void loadFromFile() {
+        ReadAndLoad rAndL = null;
+
+        try {
+            rAndL = new ReadAndLoad(this);
+        } catch (IOException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public String cardioOutput() {
+        String out = "";
+        for (int x = 0; x < cardioNo; x++) {
+            out = cardioDocs[x].getName();
+            System.out.println(cardioDocs[x]);
+
+        }
+        return out;
     }
 
 }

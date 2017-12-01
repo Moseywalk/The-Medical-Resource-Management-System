@@ -7,19 +7,9 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JPanel;
+import java.io.IOException;
 import javax.swing.JTextField;
-import medresourcemanagement.Cardiology;
-import medresourcemanagement.Doctor;
-import medresourcemanagement.Hematology;
-import medresourcemanagement.InfectiousDisease;
-import medresourcemanagement.IntensiveCareMedicine;
-import medresourcemanagement.Neurology;
-import medresourcemanagement.Ophthalmology;
-import medresourcemanagement.Orthopedics;
-import medresourcemanagement.Pulmonology;
-import medresourcemanagement.Surgery;
-import medresourcemanagement.Urology;
+import medresourcemanagement.*;
 
 /**
  *
@@ -52,6 +42,7 @@ public class AddButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
         spec = sb.getOutput();
         contactStyle = sb2.getOutput();
         s_name = name.getText();
@@ -64,10 +55,10 @@ public class AddButtonListener implements ActionListener {
             
             switch (spec) {
                 case "Cardiology":
+                    System.out.println("addddddddddddding");
                     Doctor temp = new Cardiology();
                     temp.setInfo(spec,contactStyle,s_name,s_address,s_contact);
                     reg.addToRegister(temp);
-           
                     break;
                 case "Pulmonology":
                     Doctor temp1 = new Pulmonology();
@@ -120,8 +111,12 @@ public class AddButtonListener implements ActionListener {
                 default:
 
                     break;
-
+                   
             }
+             System.out.println("Saving...");
+             reg.saveToFile();
+             
+            
            //clear tboxes
            this.name.setText(null);
            this.address.setText(null);

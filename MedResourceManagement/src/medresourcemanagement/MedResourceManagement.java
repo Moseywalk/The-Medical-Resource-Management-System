@@ -5,8 +5,6 @@
  */
 package medresourcemanagement;
 
-import gui.Register;
-import gui.Add;
 import gui.MyFrame;
 
 /**

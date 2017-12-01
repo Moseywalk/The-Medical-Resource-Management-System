@@ -16,20 +16,24 @@ import javax.swing.JComboBox;
 public class SelectBox implements ActionListener {
 
     private String output;
-    private JComboBox jComboBox2;
+    private JComboBox jComboBox;
 
     public SelectBox() {
 
     }
 
     SelectBox(JComboBox<String> jComboBox2) {
-        this.jComboBox2 = jComboBox2;
+        this.jComboBox = jComboBox2;
+    }
+
+    SelectBox(JComboBox<String> jComboBox1, JComboBox<String> jComboBox2) {
+        this.jComboBox = jComboBox1;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        String out = (String) jComboBox2.getSelectedItem();
+        String out = (String) jComboBox.getSelectedItem();
         System.out.println(out);
         this.output = out;
     }
@@ -39,6 +43,6 @@ public class SelectBox implements ActionListener {
     }
 
     public JComboBox getJCombo() {
-        return this.jComboBox2;
+        return this.jComboBox;
     }
 }

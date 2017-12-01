@@ -23,7 +23,7 @@ import medresourcemanagement.Save;
 import medresourcemanagement.Specialism;
 import medresourcemanagement.Surgery;
 import medresourcemanagement.Urology;
-
+import java.util.ArrayList;
 /**
  *
  * @author b00720507
@@ -31,27 +31,41 @@ import medresourcemanagement.Urology;
 public class Register {
 
     private JPanel inputs;
+
+    /**
+     *
+     */
+    //public ArrayList cardioDocs = new ArrayList<Cardiology>();
     public Cardiology[] cardioDocs = new Cardiology[10];
     public int cardioNo = 0;
+    //public ArrayList pulmDocs =  new ArrayList<Pulmonology>();
     public Pulmonology[] pulmDocs = new Pulmonology[10];
     public int pulmNo = 0;
+    //public ArrayList infDocs = new ArrayList<InfectiousDisease>();
     public InfectiousDisease[] infDocs = new InfectiousDisease[10];
-   public  int infNo = 0;
+    public int infNo = 0;
+    //public ArrayList hemDocs = new ArrayList<Hematology>();
     public Hematology[] hemDocs = new Hematology[10];
-   public  int hemNo = 0;
-   public  IntensiveCareMedicine[] intDocs = new IntensiveCareMedicine[10];
-   public  int intNo = 0;
+    public int hemNo = 0;
+    //public ArrayList intDocs = new ArrayList<IntensiveCareMedicine>();
+    public IntensiveCareMedicine[] intDocs = new IntensiveCareMedicine[10];
+    public int intNo = 0;
     //break
-   public  Neurology[] neuroDocs = new Neurology[10];
+    //public ArrayList neuroDocs = new ArrayList<Neurology>();
+    public Neurology[] neuroDocs = new Neurology[10];
     public int neuroNo = 0;
+    //public ArrayList eyeDocs = new ArrayList<Ophthalmology>();
     public Ophthalmology[] eyeDocs = new Ophthalmology[10];
     public int eyeNo = 0;
-    public Orthopedics[] orthoDocs = new Orthopedics[10];
+    //public ArrayList orthoDocs = new ArrayList <Orthopedics>();
+   public Orthopedics[] orthoDocs = new Orthopedics[10];
     public int orthoNo = 0;
-   public  Urology[] uroDocs = new Urology[10];
-   public  int uroNo = 0;
+    //public ArrayList uroDocs = new ArrayList<Urology>();
+    public Urology[] uroDocs = new Urology[10];
+    public int uroNo = 0;
+    //public ArrayList surgDocs = new ArrayList<Surgery>();
     public Surgery[] surgDocs = new Surgery[10];
-   public  int surgNo = 0;
+    public int surgNo = 0;
     //list of Doctors
     // Doctor[] docs = new Doctor[100];
 
@@ -73,18 +87,20 @@ public class Register {
                         cardioDocs[cardioNo] = (Cardiology) doc;
                         cardioNo++;
                         docsNo++;
-                        System.out.println(cardioDocs[cardioNo - 1]);
-                    } else {
+                        System.out.println(cardioDocs[(cardioNo-1)]);
+                    } 
+                    else {
                         System.err.print("10 doctors of this speciality already exist... delete to continue..");
                     }
                     break;
                 case PULMONOLOGY:
                     if (pulmNo <= 10) {
-                        pulmDocs[pulmNo] = (Pulmonology) doc;
+                        pulmDocs[pulmNo] =(Pulmonology) doc;
                         pulmNo++;
                         docsNo++;
                         System.out.println(pulmDocs[pulmNo - 1]);
-                    } else {
+                    } 
+                    else {
                         System.err.print("10 doctors of this speciality already exist... delete to continue..");
                     }
                     break;
@@ -93,28 +109,31 @@ public class Register {
                         infDocs[infNo] = (InfectiousDisease) doc;
                         infNo++;
                         docsNo++;
-                        System.out.println(infDocs[infNo - 1]);
-                    } else {
+                        System.out.println(infDocs[infNo- 1]);
+                    } 
+                    else {
                         System.err.print("10 doctors of this speciality already exist... delete to continue..");
                     }
                     break;
                 case HEMATOLOGY:
                     if (hemNo <= 10) {
-                        hemDocs[hemNo] = (Hematology) doc;
+                        hemDocs[hemNo]=(Hematology) doc;
                         hemNo++;
                         docsNo++;
                         System.out.println(hemDocs[hemNo - 1]);
-                    } else {
+                    } 
+                    else {
                         System.err.print("10 doctors of this speciality already exist... delete to continue..");
                     }
                     break;
                 case INTENSIVE_CARE_MEDICINE:
                     if (intNo <= 10) {
-                        intDocs[intNo] = (IntensiveCareMedicine) doc;
+                        intDocs[intNo] =(IntensiveCareMedicine) doc;
                         intNo++;
                         docsNo++;
                         System.out.println(intDocs[intNo - 1]);
-                    } else {
+                    } 
+                    else {
                         System.err.print("10 doctors of this speciality already exist... delete to continue..");
                     }
                     break;
@@ -124,7 +143,8 @@ public class Register {
                         neuroNo++;
                         docsNo++;
                         System.out.println(neuroDocs[neuroNo - 1]);
-                    } else {
+                    } 
+                    else {
                         System.err.print("10 doctors of this speciality already exist... delete to continue..");
                     }
                     break;
@@ -134,7 +154,8 @@ public class Register {
                         eyeNo++;
                         docsNo++;
                         System.out.println(eyeDocs[eyeNo - 1]);
-                    } else {
+                    } 
+                    else {
                         System.err.print("10 doctors of this speciality already exist... delete to continue..");
                     }
                     break;
@@ -144,7 +165,8 @@ public class Register {
                         orthoNo++;
                         docsNo++;
                         System.out.println(orthoDocs[orthoNo - 1]);
-                    } else {
+                    } 
+                    else {
                         System.err.print("10 doctors of this speciality already exist... delete to continue..");
                     }
                     break;
@@ -180,7 +202,7 @@ public class Register {
     public void deleteFromRegister(String name, Doctor[] docArray) {
         //search register for index
         try {
-            int index = this.searchReg(name, docArray);
+            int index = this.searchReg(name,docArray);
             docArray[index] = null;
             System.out.println("deleted " + name);
         } catch (Exception ex) {
@@ -190,17 +212,18 @@ public class Register {
 
     }
 
-    public int searchReg(String name, Doctor[] docArray) {
+    public int searchReg(String name, Doctor[]docArray) {
         int index = 0;
-        for (int x = 0; x < docArray.length; x++) {
-
-            if (docArray[x].getName().equals(name) || docArray[x].getName().contains(name)) {
-                // found it!
-                System.out.println("found it at " + x);
-                index = x;
-                break;
-            }
-        }
+        
+       for (int x =0 ; x<docArray.length;x++){
+           if(docArray[x].getName().equals(name)||docArray[x].getName().contains(name)){
+               index = x;
+               System.out.println("Found at "+x);
+               break;
+           }
+       }
+        
+        
 
         return index;
     }
@@ -225,13 +248,17 @@ public class Register {
         }
     }
 
-    public String cardioOutput() {
-        String out = "";
+    public String[] cardioOutput() {
+        String[] out = new String[cardioNo];
+        String working;
+        
         for (int x = 0; x < cardioNo; x++) {
-            out = cardioDocs[x].getName();
-            System.out.println(cardioDocs[x]);
+            out[x] = cardioDocs[x].getName();
+           
+            System.out.println("test "+out[x]);
 
         }
+       
         return out;
     }
 

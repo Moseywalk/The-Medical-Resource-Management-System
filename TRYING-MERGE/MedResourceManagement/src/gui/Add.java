@@ -6,8 +6,7 @@
 package gui;
 
 import javax.swing.JTextField;
-import medresourcemanagement.exceptions.DuplicateException;
-
+import medresourcemanagement.*;
 
 /**
  *
@@ -32,7 +31,7 @@ public class Add extends javax.swing.JPanel {
         SelectBox listen2 = new SelectBox(jComboBox1);
         jComboBox1.addActionListener(listen2);
 
-        AddButtonListener abl = new AddButtonListener(listen, listen2, jTextField1, jTextField2, jTextField3, reg);
+        AddButtonListener abl = new AddButtonListener(listen, listen2, jTextField1, jTextField2, jTextField3, this.reg);
         jButton1.addActionListener(abl);
         
         
