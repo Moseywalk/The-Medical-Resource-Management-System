@@ -7,7 +7,7 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,71 +25,66 @@ public class Delete extends javax.swing.JPanel {
     }
 
     Delete(Register reg) {
-        this.reg =reg;
+        this.reg = reg;
         initComponents();
-        DeleteBox listen = new DeleteBox(jComboBox1, jComboBox2,this.reg);
+        DeleteBox listen = new DeleteBox(jComboBox1, this.reg);
         jComboBox1.addActionListener(listen);
-      
+
         jButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 //                String[] test = {"test","test"};
 //                            System.out.println("gui.DeleteBox.actionPerformed()");
 //                           jComboBox2 = new JComboBox<>(test);
-                    String spec = listen.getOutput();
-                 System.out.println("test"+ spec);
-                 if(spec != null);
+                String spec = listen.getOutput();
+         
+                if (spec != null && jTextField1.getText() != null)
                 {
                     switch (spec) {
                         case "Cardiology":
-                            System.out.println(".actionPerformed()");
-//                            String[] test = {"test","test"};
-//                            System.out.println("gui.DeleteBox.actionPerformed()");
-//                           jComboBox2 = new JComboBox<>(test);
-                           
-                            reg.deleteFromRegister(jTextField1.getText(), reg.cardioDocs);
-                          reg.cardioNo--;
-                          reg.saveToFile();
-                           
-
+                            reg.deleteFromRegister(jTextField1.getText(), reg.getSpecArray("Cardiology"),"Cardiology");
                             break;
                         case "Pulmonology":
-
+                            reg.deleteFromRegister(jTextField1.getText(), reg.getSpecArray("Pulmonology"),"Pulmonology");
                             break;
                         case "Infectious Disease":
-
+                            reg.deleteFromRegister(jTextField1.getText(), reg.getSpecArray("Infectious Disease"),"Infectious Disease");
                             break;
                         case "Hematology":
-
+                            reg.deleteFromRegister(jTextField1.getText(), reg.getSpecArray("Hematology"),"Hematology");
                             break;
                         case "Intensive Care Medicine":
-
+                            reg.deleteFromRegister(jTextField1.getText(), reg.getSpecArray("Intensive Care Medicine"),"Intensive Care Medicine");
                             break;
                         case "Neurology":
-
+                            reg.deleteFromRegister(jTextField1.getText(), reg.getSpecArray("Neurology"),"Neurology");
                             break;
                         case "Ophthalmology":
-
+                            reg.deleteFromRegister(jTextField1.getText(), reg.getSpecArray("Ophthalmology"),"Ophthalmology");
                             break;
                         case "Orthopedics":
-
+                            reg.deleteFromRegister(jTextField1.getText(), reg.getSpecArray("Orthopedics"),"Orthopedics");
                             break;
                         case "Urology":
-
+                            reg.deleteFromRegister(jTextField1.getText(), reg.getSpecArray("Urology"),"Urology");
                             break;
                         case "Surgery":
-
+                            reg.deleteFromRegister(jTextField1.getText(), reg.getSpecArray("Surgery"),"Surgery");
                             break;
 
                         default:
-
+                           
                             break;
 
                     }
                 }
-                }        
+                else
+                {
+                      JOptionPane.showMessageDialog(null, "Please select speciailism of doctor to be deleted and then enter name"); 
+                      
+                }
+            }
 
-            
         });
     }
 
@@ -103,11 +98,11 @@ public class Delete extends javax.swing.JPanel {
     private void initComponents() {
 
         jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cardiology", "Pulmonology", "Infectious Disease", "Hematology", "Intensive Care Medicine", "Neurology", "Ophthalmology", "Orthopedics", "Urology", "Surgery" }));
         jComboBox1.setSelectedIndex(-1);
@@ -121,49 +116,49 @@ public class Delete extends javax.swing.JPanel {
             }
         });
 
-        jTextField1.setText("jTextField1");
-
         jLabel2.setText("Enter Name of Doctor to Delete");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setText("Delete doctor");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(64, 64, 64))
+                .addGap(51, 51, 51))
             .addGroup(layout.createSequentialGroup()
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(82, 82, 82)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(137, Short.MAX_VALUE))
+                        .addGap(84, 84, 84)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addGap(77, 77, 77)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(43, 43, 43))
+                .addGap(55, 55, 55))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -175,9 +170,9 @@ public class Delete extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

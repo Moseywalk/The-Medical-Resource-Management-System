@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package medresourcemanagement;
 
 import gui.Register;
@@ -11,10 +6,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-/**
- *
- * @author Gordo
- */
 public class ReadAndLoad {
 
     FileReader read = null;
@@ -29,7 +20,7 @@ public class ReadAndLoad {
     public ReadAndLoad(Register reg) throws IOException {
         System.out.println("Reading from file");
         this.reg = reg;
-        read = new FileReader(new File("records.txt"));
+        read = new FileReader(new File("Doctor Records File.txt"));
         bf = new BufferedReader(read);
         String input;
         String[] tokens;
@@ -58,7 +49,7 @@ public class ReadAndLoad {
             this.readIn(input);
         }
         input = (bf.readLine());
-        System.out.println(input);
+       System.out.println(input);
         if ("HEMATOLOGY".equals(input)) {
             this.readIn(input);
         }
@@ -68,12 +59,12 @@ public class ReadAndLoad {
             this.readIn(input);
         }
         input = (bf.readLine());
-        System.out.println(input);
+       System.out.println(input);
         if ("NEUROLOGY".equals(input)) {
             this.readIn(input);
         }
         input = (bf.readLine());
-        System.out.println(input);
+       System.out.println(input);
         if ("OPHTHALMOLOGY".equals(input)) {
             this.readIn(input);
         }
@@ -102,13 +93,13 @@ public class ReadAndLoad {
         //then nextline char will indicate number cardio of records
         int i = Integer.parseInt(bf.readLine());
 
-        System.out.println(i);
+        System.out.println(i+" Record to read in...");
         // next X lines will be records
         for (int x = 0; x < i; x++) {
             input = bf.readLine();
            
             tokens = input.split(",");
-             System.out.println(tokens[0] + tokens[1] + tokens[2] + tokens[3]);
+           //  System.out.println(tokens[0] + tokens[1] + tokens[2] + tokens[3]);
             tempName = tokens[0];
             tempAddress = tokens[1];
             tempContact = tokens[2];
@@ -196,7 +187,7 @@ public class ReadAndLoad {
             tempContact = tokens[2];
             tempContactID = tokens[3];
             tempDate = tokens[5];
-            //time to nake a new instanse of doc baby!
+            //time to make a new instanse of doc baby!
            
               
                     System.out.println("Loaded and now creating new Surgeon");

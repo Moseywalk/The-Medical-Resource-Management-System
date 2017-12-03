@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package medresourcemanagement;
 
 import javax.swing.JOptionPane;
@@ -23,7 +18,7 @@ public abstract class Doctor {
     protected TimesAvailaby timesAva;
 
     public Doctor() {
-
+        timesAva = new TimesAvailaby();
     }
 
     @Override
@@ -41,6 +36,17 @@ public abstract class Doctor {
         contact = (PrefContact.valueOf(JOptionPane.showInputDialog("Select contact type (Telephone/Skype/Facetime")));
         contactID = JOptionPane.showInputDialog("Enter contact info");
 
+    }
+    public void setAvailabilityTimes(String sunSt, String sunEt,String monSt,String monEt,String tueSt, String tueEt,
+            String wedSt, String wedEt, String thuSt,String thuEt, String friSt, String friEt,String satSt,String satEt){
+        this.timesAva.setSunTime(sunSt, sunEt);
+        this.timesAva.setMonTime(monSt, monEt);
+        this.timesAva.setTueTime(tueSt, tueEt);
+        this.timesAva.setWedTime(wedSt, wedEt);
+        this.timesAva.setThuTime(thuSt, thuEt);
+        this.timesAva.setFriTime(friSt, friEt);
+        this.timesAva.setSatTime(satSt, satEt);
+        System.out.println("Times set!");
     }
 
     public Specialism getSpecialism() {

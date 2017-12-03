@@ -1,0 +1,28 @@
+CARDIOLOGY
+2
+Conor Murphy ,Conor Murphy ,Skype,Skype,CARDIOLOGY
+Bri,qwe,Skype,Skype,CARDIOLOGY
+PULMONOLOGY
+0
+INFECTIOUS_DISEASE
+0
+HEMATOLOGY
+0
+INTENSIVE_CARE_MEDICINE
+0
+NEUROLOGY
+4
+Nicola Johnson,A place London,Facetime,Facetime,NEUROLOGY
+asd,asd,Skype,Skype,NEUROLOGY
+unqualified,qweqwe,Skype,Skype,NEUROLOGY
+okay,okqwe,Telephone,Telephone,NEUROLOGY
+OPHTHALMOLOGY
+0
+ORTHOPEDICS
+0
+UROLOGY
+1
+Laura Penny,Pen Place,Skype,Skype,UROLOGY
+SURGERY
+1
+Dr Surgeon,Awesome Place,Telephone,Telephone,SURGERY,12/12/12

@@ -5,12 +5,7 @@
  */
 package gui;
 
-import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Rectangle;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 /**
  *
@@ -26,7 +21,7 @@ public class Avail extends javax.swing.JPanel {
     /**
      * Creates new form Avail
      */
-    public Avail(Register Reg) {
+    public Avail(Register reg) {
         initComponents();
         this.reg = reg;
         

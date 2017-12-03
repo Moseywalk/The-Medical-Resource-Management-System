@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package medresourcemanagement;
 
 import gui.Register;
@@ -10,104 +5,100 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- *
- * @author b00720507
- */
 public class Save {
     PrintWriter out;
     public Save() throws IOException{
-        out = new PrintWriter(new FileWriter("records.txt", false));
+        out = new PrintWriter(new FileWriter("Doctor Records File.txt", false));
     }
     public void writeToFile(Register reg){
 //         StringBuilder sb = new StringBuilder();
        //OUTPUT for CARDIO
        //when it comes to real thing remove system.out for fileWriter methods
       out.println("CARDIOLOGY");
-      out.println(reg.cardioNo);
-       for (int x=0;x<reg.cardioNo;x++){ 
-          out.println(reg.cardioDocs[x]);
+      out.println(reg.getCardioNo());
+       for (int x=0;x<reg.getCardioNo();x++){ 
+          out.println(reg.getSpecArray("Cardiology")[x]);
            
        }
        
        //OUTPUT for CARDIO
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("PULMONOLOGY");
-       out.println(reg.pulmNo);
-       for (int x=0;x<reg.pulmNo;x++){
-           out.println(reg.pulmDocs[x]);
+       out.println(reg.getPulmNo());
+       for (int x=0;x<reg.getPulmNo();x++){
+           out.println(reg.getSpecArray("Pulmonology")[x]);
         
        }
       
        //OUTPUT for INFECTIOUS_DISEASE
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("INFECTIOUS_DISEASE");
-       out.println(reg.infNo);
-       for (int x=0;x<reg.infNo;x++){
-           out.println(reg.infDocs[x]);
+       out.println(reg.getInfNo());
+       for (int x=0;x<reg.getInfNo();x++){
+           out.println(reg.getSpecArray("Infectious Disease")[x]);
          
        }
        
        //OUTPUT for CARDIO
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("HEMATOLOGY");
-       out.println(reg.hemNo);
-       for (int x=0;x<reg.hemNo;x++){
-          out.println(reg.hemDocs[x]);
+       out.println(reg.getHemNo());
+       for (int x=0;x<reg.getHemNo();x++){
+          out.println(reg.getSpecArray("Hematology")[x]);
         
        }
        
        //OUTPUT for INTENSIVE_CARE_MEDICINE
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("INTENSIVE_CARE_MEDICINE");
-       out.println(reg.intNo);
-       for (int x=0;x<reg.intNo;x++){
-          out.println(reg.intDocs[x]);
+       out.println(reg.getIntNo());
+       for (int x=0;x<reg.getIntNo();x++){
+          out.println(reg.getSpecArray("Intensive Care Medicine")[x]);
          
        }
       
        //OUTPUT for NEUROLOGY
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("NEUROLOGY");
-       out.println(reg.neuroNo);
-       for (int x=0;x<reg.neuroNo;x++){
-           out.println(reg.neuroDocs[x]);
+       out.println(reg.getNeuroNo());
+       for (int x=0;x<reg.getNeuroNo();x++){
+           out.println(reg.getSpecArray("Neurology")[x]);
         
        }
       
        //OUTPUT for OPHTHALMOLOGY
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("OPHTHALMOLOGY");
-       out.println(reg.eyeNo);
-       for (int x=0;x<reg.eyeNo;x++){
-           out.println(reg.eyeDocs[x]);
+       out.println(reg.getEyeNo());
+       for (int x=0;x<reg.getEyeNo();x++){
+           out.println(reg.getSpecArray("Ophthalmology")[x]);
         
        }
        
        //OUTPUT for ORTHOPEDICS
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("ORTHOPEDICS");
-       out.println(reg.orthoNo);
-       for (int x=0;x<reg.orthoNo;x++){
- out.println(reg.orthoDocs[x]);
+       out.println(reg.getOrthoNo());
+       for (int x=0;x<reg.getOrthoNo();x++){
+ out.println(reg.getSpecArray("Orthopedics")[x]);
          
        }
     
        //OUTPUT for UROLOGY
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("UROLOGY");
-       out.println(reg.uroNo);
-       for (int x=0;x<reg.uroNo;x++){
-         out.println(reg.uroDocs[x]);
+       out.println(reg.getUroNo());
+       for (int x=0;x<reg.getUroNo();x++){
+         out.println(reg.getSpecArray("Urology")[x]);
           
        }
        
         //OUTPUT for SURGERY
        //when it comes to real thing remove system.out for fileWriter methods
        out.println("SURGERY");
-       out.println(reg.surgNo);
-       for (int x=0;x<reg.surgNo;x++){
-          out.println(reg.surgDocs[x]);
+       out.println(reg.getSurgNo());
+       for (int x=0;x<reg.getSurgNo();x++){
+          out.println(reg.getSpecArray("Surgery")[x]);
           
        }
        

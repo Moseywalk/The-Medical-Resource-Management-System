@@ -7,10 +7,6 @@ package medresourcemanagement;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author b00720507
- */
 public class Surgery extends Doctor {
 
     public String DateOfLatestCert;
@@ -43,13 +39,13 @@ public class Surgery extends Doctor {
         DateOfLatestCert = JOptionPane.showInputDialog("Enter date of latest Cert");
     }
     
-       public void setInfo(String spec, String contactStyle, String s_name, String s_address, String s_contact) {
-        name = s_name;
-        contactAddress = s_address;
-        contact = (PrefContact.valueOf(contactStyle));
-        contactID = s_contact;
-        DateOfLatestCert = JOptionPane.showInputDialog(null, "Enter date of latest Cert");
-    }
+//       public void setInfo(String spec, String contactStyle, String s_name, String s_address, String s_contact) {
+//        name = s_name;
+//        contactAddress = s_address;
+//        contact = (PrefContact.valueOf(contactStyle));
+//        contactID = s_contact;
+//        DateOfLatestCert = JOptionPane.showInputDialog(null, "Enter date of latest Cert");
+//    }
              public void setInfo(String spec, String contactStyle, String s_name, String s_address, String s_contact,String date) {
         name = s_name;
         contactAddress = s_address;
