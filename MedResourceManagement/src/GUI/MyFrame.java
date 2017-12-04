@@ -18,8 +18,9 @@ import javax.swing.*;
 public class MyFrame extends JFrame {
 
     public Register reg;
-
+    public JFrame self;
     public MyFrame() {
+        self = this;
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         //set location to centre
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
@@ -68,7 +69,7 @@ public class MyFrame extends JFrame {
         availability.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Avail av = new Avail(reg);
+                Avail av = new Avail(reg, self);
                 setContentPane(av);
 
                 //gets rid of bug 

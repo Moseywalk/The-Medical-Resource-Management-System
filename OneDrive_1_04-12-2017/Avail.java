@@ -9,11 +9,7 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-import java.text.SimpleDateFormat;
-import java.time.LocalTime;
-import java.util.Date;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -23,36 +19,35 @@ import javax.swing.JPanel;
 public class Avail extends javax.swing.JPanel {
         private Register reg;
         private boolean isAvailable;
-        private JFrame parent;
-        private String day;
-        
-        private SelectBox listen;
-
+  
+        public Avail(){
+        }
 
     /**
      * Creates new form Avail
      */
-    public Avail(Register reg, JFrame parent) {
+    public Avail(Register Reg) {
         initComponents();
         this.reg = reg;
-        this.parent = parent;
         
-        //set the current day and time
-        Date now = new Date();
-        SimpleDateFormat simpleDate = new SimpleDateFormat("E");
-        System.out.println(simpleDate.format(now));
-        day = simpleDate.format(now);
-        LocalTime timeNow = LocalTime.now();
-        System.out.println(timeNow);
         
-        listen = new SelectBox(jComboBox1);
+        SelectBox listen = new SelectBox(jComboBox1);
         jComboBox1.addActionListener(listen);
-        String spec = listen.getOutput();
-        
-    
-        
+                   
     }
     
+    public void displayDoc(){
+                 
+            jLabel1.setText("Dr. Drake McCormick");
+
+    }
+    
+       public void displayOld(){
+                 
+            jLabel1.setText("Doc");
+                   
+
+    }
     
     public void displayColourRed(){
         jTextField2.setBackground(Color.red);
@@ -370,9 +365,9 @@ public class Avail extends javax.swing.JPanel {
                                 .addComponent(jButton1))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -395,223 +390,27 @@ public class Avail extends javax.swing.JPanel {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
        	if(jComboBox1.getSelectedItem().toString().equals("Cardiology"))
         {
-        
-            String[] names = reg.cardioNames();
-            jLabel1.setText(names[0]);
-            jLabel3.setText(names[1]);
-            jLabel4.setText(names[2]);
-            jLabel5.setText(names[3]);
-            jLabel10.setText(names[4]);
-            jLabel6.setText(names[5]);
-            jLabel7.setText(names[6]);
-            jLabel8.setText(names[7]);
-            jLabel9.setText(names[8]);
-            jLabel11.setText(names[9]);
+            displayDoc();
+            displayColourRed();
+
         }
         
         else if (jComboBox1.getSelectedItem().toString().equals("Pulmonology"))
         {
-         String[] names = reg.pulmNames();
-           //displayColourRed();
-            jLabel1.setText(names[0]);
-            jLabel3.setText(names[1]);
-            jLabel4.setText(names[2]);
-            jLabel5.setText(names[3]);
-            jLabel10.setText(names[4]);
-            jLabel6.setText(names[5]);
-            jLabel7.setText(names[6]);
-            jLabel8.setText(names[7]);
-            jLabel9.setText(names[8]);
-            jLabel11.setText(names[9]);
-            
-            
-
-        }
-        else if (jComboBox1.getSelectedItem().toString().equals("Infectious Disease"))
-        {
-         String[] names = reg.infNames();
-           //displayColourRed();
-            jLabel1.setText(names[0]);
-            jLabel3.setText(names[1]);
-            jLabel4.setText(names[2]);
-            jLabel5.setText(names[3]);
-            jLabel10.setText(names[4]);
-            jLabel6.setText(names[5]);
-            jLabel7.setText(names[6]);
-            jLabel8.setText(names[7]);
-            jLabel9.setText(names[8]);
-            jLabel11.setText(names[9]);
-
-        }
-        else if (jComboBox1.getSelectedItem().toString().equals("Hematology"))
-        {
-         String[] names = reg.hemNames();
-           //displayColourRed();
-            jLabel1.setText(names[0]);
-            jLabel3.setText(names[1]);
-            jLabel4.setText(names[2]);
-            jLabel5.setText(names[3]);
-            jLabel10.setText(names[4]);
-            jLabel6.setText(names[5]);
-            jLabel7.setText(names[6]);
-            jLabel8.setText(names[7]);
-            jLabel9.setText(names[8]);
-            jLabel11.setText(names[9]);
-
-        }
-        else if (jComboBox1.getSelectedItem().toString().equals("Intensive Care Medicine"))
-        {
-         String[] names = reg.intNames();
-           //displayColourRed();
-            jLabel1.setText(names[0]);
-            jLabel3.setText(names[1]);
-            jLabel4.setText(names[2]);
-            jLabel5.setText(names[3]);
-            jLabel10.setText(names[4]);
-            jLabel6.setText(names[5]);
-            jLabel7.setText(names[6]);
-            jLabel8.setText(names[7]);
-            jLabel9.setText(names[8]);
-            jLabel11.setText(names[9]);
-
-        }
-        else if (jComboBox1.getSelectedItem().toString().equals("Neurology"))
-        {
-         String[] names = reg.neuroNames();
-           //displayColourRed();
-            jLabel1.setText(names[0]);
-            jLabel3.setText(names[1]);
-            jLabel4.setText(names[2]);
-            jLabel5.setText(names[3]);
-            jLabel10.setText(names[4]);
-            jLabel6.setText(names[5]);
-            jLabel7.setText(names[6]);
-            jLabel8.setText(names[7]);
-            jLabel9.setText(names[8]);
-            jLabel11.setText(names[9]);
-
-        }
-        else if (jComboBox1.getSelectedItem().toString().equals("Ophthalmology"))
-        {
-         String[] names = reg.eyeNames();
-           //displayColourRed();
-            jLabel1.setText(names[0]);
-            jLabel3.setText(names[1]);
-            jLabel4.setText(names[2]);
-            jLabel5.setText(names[3]);
-            jLabel10.setText(names[4]);
-            jLabel6.setText(names[5]);
-            jLabel7.setText(names[6]);
-            jLabel8.setText(names[7]);
-            jLabel9.setText(names[8]);
-            jLabel11.setText(names[9]);
-
-        }
-        else if (jComboBox1.getSelectedItem().toString().equals("Orthopedics"))
-        {
-         String[] names = reg.orthoNames();
-           //displayColourRed();
-            jLabel1.setText(names[0]);
-            jLabel3.setText(names[1]);
-            jLabel4.setText(names[2]);
-            jLabel5.setText(names[3]);
-            jLabel10.setText(names[4]);
-            jLabel6.setText(names[5]);
-            jLabel7.setText(names[6]);
-            jLabel8.setText(names[7]);
-            jLabel9.setText(names[8]);
-            jLabel11.setText(names[9]);
-
-        }
-        else if (jComboBox1.getSelectedItem().toString().equals("Urology"))
-        {
-         String[] names = reg.uroNames();
-           //displayColourRed();
-            jLabel1.setText(names[0]);
-            jLabel3.setText(names[1]);
-            jLabel4.setText(names[2]);
-            jLabel5.setText(names[3]);
-            jLabel10.setText(names[4]);
-            jLabel6.setText(names[5]);
-            jLabel7.setText(names[6]);
-            jLabel8.setText(names[7]);
-            jLabel9.setText(names[8]);
-            jLabel11.setText(names[9]);
-
-        }
-        else if (jComboBox1.getSelectedItem().toString().equals("Surgery"))
-        {
-         String[] names = reg.surgNames();
-           //displayColourRed();
-            jLabel1.setText(names[0]);
-            jLabel3.setText(names[1]);
-            jLabel4.setText(names[2]);
-            jLabel5.setText(names[3]);
-            jLabel10.setText(names[4]);
-            jLabel6.setText(names[5]);
-            jLabel7.setText(names[6]);
-            jLabel8.setText(names[7]);
-            jLabel9.setText(names[8]);
-            jLabel11.setText(names[9]);
+            displayDoc();
+            displayColourRed();
 
         }
         
         else{
-        
+            displayOld();
             displayColourGreen();
         }
 
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-             
-        String spec = listen.getOutput();
-          if (spec != null && jTextField1.getText() != null)
-                {
-                    switch (spec) {
-                        case "Cardiology":
-                          
-                            break;
-                        case "Pulmonology":
-      
-                            break;
-                        case "Infectious Disease":
-   
-                            break;
-                        case "Hematology":
-
-                            break;
-                        case "Intensive Care Medicine":
- 
-                            break;
-                        case "Neurology":
-
-                            break;
-                        case "Ophthalmology":
-
-                            break;
-                        case "Orthopedics":
-          
-                            break;
-                        case "Urology":
-
-                            break;
-                        case "Surgery":
-  
-                            break;
-
-                        default:
-                           
-                            break;
-
-                    }
-                }
-                else
-                {
-                      JOptionPane.showMessageDialog(null, "Please select speciailism of doctor to be deleted and then enter name"); 
-                      
-                }
-        
+      jTextField1.setText(jComboBox1.getSelectedItem().toString()+" Availble Doctors -");
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -624,12 +423,9 @@ public class Avail extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField11ActionPerformed
 
     private void mouseClick(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseClick
-       DisplayDoc dis = new DisplayDoc(parent,reg);
-        System.out.println("Button is working?");
-        parent.setContentPane(dis);
-        //redraw
-                parent.setSize(400, 449);
-                parent.setSize(400, 450);  
+        new DisplayDoc().setVisible(true);
+
+        this.setVisible(false);
     }//GEN-LAST:event_mouseClick
 
     private void mouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseEntered
@@ -715,85 +511,56 @@ public class Avail extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel11MouseExited
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-       DisplayDoc dis = new DisplayDoc(parent,reg);
-        System.out.println("Button is working?");
-        parent.setContentPane(dis);
-        //redraw
-                parent.setSize(400, 449);
-                parent.setSize(400, 450);  
+        new DisplayDoc().setVisible(true);
 
         this.setVisible(false);    }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-       DisplayDoc dis = new DisplayDoc(parent,reg);
-        System.out.println("Button is working?");
-        parent.setContentPane(dis);
-        //redraw
-                parent.setSize(400, 449);
-                parent.setSize(400, 450);      // TODO add your handling code here:
+        new DisplayDoc().setVisible(true);
+
+        this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-     DisplayDoc dis = new DisplayDoc(parent,reg);
-        System.out.println("Button is working?");
-        parent.setContentPane(dis);
-        //redraw
-                parent.setSize(400, 449);
-                parent.setSize(400, 450);         // TODO add your handling code here:
+        new DisplayDoc().setVisible(true);
+
+        this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-      DisplayDoc dis = new DisplayDoc(parent,reg);
-        System.out.println("Button is working?");
-        parent.setContentPane(dis);
-        //redraw
-                parent.setSize(400, 449);
-                parent.setSize(400, 450);           // TODO add your handling code here:
+        new DisplayDoc().setVisible(true);
+
+        this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-    DisplayDoc dis = new DisplayDoc(parent,reg);
-        System.out.println("Button is working?");
-        parent.setContentPane(dis);
-        //redraw
-                parent.setSize(400, 449);
-                parent.setSize(400, 450);           // TODO add your handling code here:
+        new DisplayDoc().setVisible(true);
+
+        this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-       DisplayDoc dis = new DisplayDoc(parent,reg);
-        System.out.println("Button is working?");
-        parent.setContentPane(dis);
-        //redraw
-                parent.setSize(400, 449);
-                parent.setSize(400, 450);          // TODO add your handling code here:
+        new DisplayDoc().setVisible(true);
+
+        this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-       DisplayDoc dis = new DisplayDoc(parent,reg);
-        System.out.println("Button is working?");
-        parent.setContentPane(dis);
-        //redraw
-                parent.setSize(400, 449);
-                parent.setSize(400, 450);           // TODO add your handling code here:
+        new DisplayDoc().setVisible(true);
+
+        this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-    DisplayDoc dis = new DisplayDoc(parent,reg);
-        System.out.println("Button is working?");
-        parent.setContentPane(dis);
-        //redraw
-                parent.setSize(400, 449);
-                parent.setSize(400, 450);         // TODO add your handling code here:
+        new DisplayDoc().setVisible(true);
+
+        this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-     DisplayDoc dis = new DisplayDoc(parent,reg);
-        System.out.println("Button is working?");
-        parent.setContentPane(dis);
-        //redraw
-                parent.setSize(400, 449);
-                parent.setSize(400, 450);        // TODO add your handling code here:
+        new DisplayDoc().setVisible(true);
+
+        this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel11MouseClicked
 
 
