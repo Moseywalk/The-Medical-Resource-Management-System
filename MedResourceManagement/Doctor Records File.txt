@@ -1,28 +1,29 @@
 CARDIOLOGY
-2
-Conor Murphy ,Conor Murphy ,Skype,Skype,CARDIOLOGY
-Bri,qwe,Skype,Skype,CARDIOLOGY
+1
+Mary Shelley,297 Peartree Grove Guildford,Skype,Skype,CARDIOLOGY
 PULMONOLOGY
-0
+1
+Laura Penny,87 Primrose Way Ipswich,Facetime,Facetime,PULMONOLOGY
 INFECTIOUS_DISEASE
-0
+2
+Ciaran Bell,58 Windy Ridge Folkstone,Telephone,Telephone,INFECTIOUS_DISEASE
+Ciaran Bell,58 Windy Ridge Folkstone,Telephone,Telephone,INFECTIOUS_DISEASE
 HEMATOLOGY
-0
+1
+Conor Murphy,12 Front Road Leeds,Telephone,Telephone,HEMATOLOGY
 INTENSIVE_CARE_MEDICINE
 0
 NEUROLOGY
-4
-Nicola Johnson,A place London,Facetime,Facetime,NEUROLOGY
-asd,asd,Skype,Skype,NEUROLOGY
-unqualified,qweqwe,Skype,Skype,NEUROLOGY
-okay,okqwe,Telephone,Telephone,NEUROLOGY
+1
+Carol Mckee,79 The Green Birmingham,Skype,Skype,NEUROLOGY
 OPHTHALMOLOGY
 0
 ORTHOPEDICS
-0
+1
+Robert Jones,165 Main Street Glasgow,Facetime,Facetime,ORTHOPEDICS
 UROLOGY
-1
-Laura Penny,Pen Place,Skype,Skype,UROLOGY
+0
 SURGERY
-1
-Dr Surgeon,Awesome Place,Telephone,Telephone,SURGERY,12/12/12
+2
+John Smith,13 Value Avenue Bristol,Telephone,Telephone,SURGERY,12/05/2016
+Nicola Johnson,128 Ash Park Coleraine,Skype,Skype,SURGERY,24/11/2015

@@ -83,6 +83,8 @@ public class Delete extends javax.swing.JPanel {
                       JOptionPane.showMessageDialog(null, "Please select speciailism of doctor to be deleted and then enter name"); 
                       
                 }
+                jComboBox1.setSelectedIndex(-1);
+                jTextField1.setText("");
             }
 
         });

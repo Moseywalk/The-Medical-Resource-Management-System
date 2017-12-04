@@ -15,6 +15,7 @@ import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import medresourcemanagement.Doctor;
 
 /**
  *
@@ -27,7 +28,7 @@ public class Avail extends javax.swing.JPanel {
         private String day;
         
         private SelectBox listen;
-
+        Doctor doc1,doc2,doc3,doc4,doc5,doc6,doc7,doc8,doc9,doc10;
 
     /**
      * Creates new form Avail
@@ -74,8 +75,6 @@ public class Avail extends javax.swing.JPanel {
 
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -107,38 +106,26 @@ public class Avail extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("Go");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextField2.setBackground(new java.awt.Color(51, 255, 51));
+        jTextField2.setBackground(java.awt.Color.lightGray);
+        jTextField2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jTextField3.setBackground(new java.awt.Color(51, 255, 51));
+        jTextField3.setBackground(java.awt.Color.lightGray);
 
-        jTextField4.setBackground(new java.awt.Color(51, 255, 51));
+        jTextField4.setBackground(java.awt.Color.lightGray);
 
-        jTextField5.setBackground(new java.awt.Color(51, 255, 51));
+        jTextField5.setBackground(java.awt.Color.lightGray);
 
         jTextField6.setBackground(new java.awt.Color(204, 204, 204));
 
-        jTextField7.setBackground(new java.awt.Color(255, 51, 51));
+        jTextField7.setBackground(java.awt.Color.lightGray);
 
-        jTextField8.setBackground(new java.awt.Color(255, 51, 51));
+        jTextField8.setBackground(java.awt.Color.lightGray);
 
-        jTextField9.setBackground(new java.awt.Color(255, 51, 51));
+        jTextField9.setBackground(java.awt.Color.lightGray);
 
-        jTextField10.setBackground(new java.awt.Color(255, 51, 51));
+        jTextField10.setBackground(java.awt.Color.lightGray);
 
         jTextField11.setBackground(new java.awt.Color(204, 204, 204));
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
@@ -152,11 +139,11 @@ public class Avail extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mouseClick(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                mouseExit(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Avail.this.mouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                mouseExit(evt);
             }
         });
 
@@ -165,11 +152,11 @@ public class Avail extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel3MouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 mouseEntered1(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel3MouseExited(evt);
             }
         });
 
@@ -178,11 +165,11 @@ public class Avail extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel4MouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel4MouseExited(evt);
             }
         });
 
@@ -191,11 +178,11 @@ public class Avail extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel5MouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel5MouseExited(evt);
             }
         });
 
@@ -204,11 +191,11 @@ public class Avail extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel6MouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel6MouseExited(evt);
             }
         });
 
@@ -217,11 +204,11 @@ public class Avail extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel7MouseClicked(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel7MouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel7MouseExited(evt);
             }
         });
 
@@ -230,11 +217,11 @@ public class Avail extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel8MouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel8MouseExited(evt);
             }
         });
 
@@ -243,11 +230,11 @@ public class Avail extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel9MouseClicked(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel9MouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel9MouseExited(evt);
             }
         });
 
@@ -256,11 +243,11 @@ public class Avail extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel10MouseClicked(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel10MouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel10MouseExited(evt);
             }
         });
 
@@ -269,11 +256,11 @@ public class Avail extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel11MouseClicked(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel11MouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel11MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel11MouseExited(evt);
             }
         });
 
@@ -307,7 +294,7 @@ public class Avail extends javax.swing.JPanel {
                     .addComponent(jLabel9)
                     .addComponent(jLabel11)
                     .addComponent(jLabel5))
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -364,16 +351,11 @@ public class Avail extends javax.swing.JPanel {
                         .addGap(84, 84, 84)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1))))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                        .addGap(50, 50, 50)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -381,33 +363,151 @@ public class Avail extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
        	if(jComboBox1.getSelectedItem().toString().equals("Cardiology"))
         {
-        
-            String[] names = reg.cardioNames();
+       String[] names = reg.cardioNames();
+       int[]x;
+       //first label
             jLabel1.setText(names[0]);
+            x = reg.searchReg(names[0]);
+            try{
+            doc1 = reg.getDoc(x);
+            }
+            catch(NullPointerException ex){
+                System.err.println("Can't find a doc!");
+            }
+            jLabel1.setText(names[0]);
+            if(names[0] =="null"){
+                jTextField2.setBackground(Color.GRAY);
+            }
+            //second label
+            x = reg.searchReg(names[1]);
+            try{
+            doc2 = reg.getDoc(x);
+            }
+            catch(NullPointerException ex){
+                System.err.println("Can't find a doc!");
+            }
             jLabel3.setText(names[1]);
+            if(names[1] =="null"){
+                jTextField3.setBackground(Color.GRAY);
+            }
+             //third  label
+            x = reg.searchReg(names[2]);
+            try{
+            doc3 = reg.getDoc(x);
+            }
+            catch(NullPointerException ex){
+                System.err.println("Can't find a doc!");
+            }
+            //end
             jLabel4.setText(names[2]);
+            if(names[2] =="null"){
+                jTextField4.setBackground(Color.GRAY);
+            }
+               //forth  label
+            x = reg.searchReg(names[3]);
+            try{
+            doc4 = reg.getDoc(x);
+            }
+            catch(NullPointerException ex){
+                System.err.println("Can't find a doc!");
+            }
+            //end
             jLabel5.setText(names[3]);
+            if(names[3] =="null"){
+                jTextField5.setBackground(Color.GRAY);
+            }
+               //fifth  label
+            x = reg.searchReg(names[4]);
+            try{
+            doc5 = reg.getDoc(x);
+            }
+            catch(NullPointerException ex){
+                System.err.println("Can't find a doc!");
+            }
+            //end
             jLabel10.setText(names[4]);
+            if(names[4] =="null"){
+                jTextField6.setBackground(Color.GRAY);
+            }
+               //six  label
+            x = reg.searchReg(names[5]);
+            try{
+            doc6 = reg.getDoc(x);
+            }
+            catch(NullPointerException ex){
+                System.err.println("Can't find a doc!");
+            }
+            //end
             jLabel6.setText(names[5]);
+            if(names[5] =="null"){
+                jTextField7.setBackground(Color.GRAY);
+            }
+               //7  label
+            x = reg.searchReg(names[6]);
+            try{
+            doc7 = reg.getDoc(x);
+            }
+            catch(NullPointerException ex){
+                System.err.println("Can't find a doc!");
+            }
+            //end
             jLabel7.setText(names[6]);
+            if(names[6] =="null"){
+                jTextField8.setBackground(Color.GRAY);
+            }
+               //8  label
+            x = reg.searchReg(names[2]);
+            try{
+            doc8 = reg.getDoc(x);
+            }
+            catch(NullPointerException ex){
+                System.err.println("Can't find a doc!");
+            }
+            //end
             jLabel8.setText(names[7]);
+            if(names[7] =="null"){
+                jTextField9.setBackground(Color.GRAY);
+            }
+               //9  label
+            x = reg.searchReg(names[8]);
+            try{
+            doc9 = reg.getDoc(x);
+            }
+            catch(NullPointerException ex){
+                System.err.println("Can't find a doc!");
+            }
+            //end
             jLabel9.setText(names[8]);
+            if(names[8] =="null"){
+                jTextField10.setBackground(Color.GRAY);
+            }
+               //10  label
+            x = reg.searchReg(names[9]);
+            try{
+            doc10 = reg.getDoc(x);
+            }
+            catch(NullPointerException ex){
+                System.err.println("Can't find a doc!");
+            }
+            //end
             jLabel11.setText(names[9]);
+            if(names[9] =="null"){
+                jTextField11.setBackground(Color.GRAY);
+            }
+            
+            
         }
+        
         
         else if (jComboBox1.getSelectedItem().toString().equals("Pulmonology"))
         {
@@ -511,23 +611,65 @@ public class Avail extends javax.swing.JPanel {
         {
          String[] names = reg.orthoNames();
            //displayColourRed();
+           
+            //displayColourRed();
+            Doctor doc;
+            System.out.println("Is it here?");
             jLabel1.setText(names[0]);
+            int[] x = reg.searchReg(names[0]);
+            try{
+            doc = reg.getDoc(x);
+            }
+            catch(NullPointerException ex){
+                
+            }
+            if(names[0] =="null"){
+                jTextField2.setBackground(Color.GRAY);
+            }
             jLabel3.setText(names[1]);
+            if(names[1] =="null"){
+                jTextField3.setBackground(Color.GRAY);
+            }
             jLabel4.setText(names[2]);
+            if(names[2] =="null"){
+                jTextField4.setBackground(Color.GRAY);
+            }
             jLabel5.setText(names[3]);
+            if(names[3] =="null"){
+                jTextField5.setBackground(Color.GRAY);
+            }
             jLabel10.setText(names[4]);
+            if(names[4] =="null"){
+                jTextField6.setBackground(Color.GRAY);
+            }
             jLabel6.setText(names[5]);
+            if(names[5] =="null"){
+                jTextField7.setBackground(Color.GRAY);
+            }
             jLabel7.setText(names[6]);
+            if(names[6] =="null"){
+                jTextField8.setBackground(Color.GRAY);
+            }
             jLabel8.setText(names[7]);
+            if(names[7] =="null"){
+                jTextField9.setBackground(Color.GRAY);
+            }
             jLabel9.setText(names[8]);
+            if(names[8] =="null"){
+                jTextField10.setBackground(Color.GRAY);
+            }
             jLabel11.setText(names[9]);
+            if(names[9] =="null"){
+                jTextField11.setBackground(Color.GRAY);
+            }
+ 
 
         }
         else if (jComboBox1.getSelectedItem().toString().equals("Urology"))
         {
          String[] names = reg.uroNames();
            //displayColourRed();
-            jLabel1.setText(names[0]);
+              jLabel1.setText(names[0]);
             jLabel3.setText(names[1]);
             jLabel4.setText(names[2]);
             jLabel5.setText(names[3]);
@@ -563,69 +705,20 @@ public class Avail extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-             
-        String spec = listen.getOutput();
-          if (spec != null && jTextField1.getText() != null)
-                {
-                    switch (spec) {
-                        case "Cardiology":
-                          
-                            break;
-                        case "Pulmonology":
-      
-                            break;
-                        case "Infectious Disease":
-   
-                            break;
-                        case "Hematology":
-
-                            break;
-                        case "Intensive Care Medicine":
- 
-                            break;
-                        case "Neurology":
-
-                            break;
-                        case "Ophthalmology":
-
-                            break;
-                        case "Orthopedics":
-          
-                            break;
-                        case "Urology":
-
-                            break;
-                        case "Surgery":
-  
-                            break;
-
-                        default:
-                           
-                            break;
-
-                    }
-                }
-                else
-                {
-                      JOptionPane.showMessageDialog(null, "Please select speciailism of doctor to be deleted and then enter name"); 
-                      
-                }
-        
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-       
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField11ActionPerformed
 
     private void mouseClick(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseClick
        DisplayDoc dis = new DisplayDoc(parent,reg);
-        System.out.println("Button is working?");
+       
+       try{
+           dis.enterDetails(doc1);
+       }
+       catch(Exception ex){
+           
+       }
+               System.out.println("Button1 is working?");
         parent.setContentPane(dis);
         //redraw
                 parent.setSize(400, 449);
@@ -716,6 +809,12 @@ public class Avail extends javax.swing.JPanel {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
        DisplayDoc dis = new DisplayDoc(parent,reg);
+         try{
+           dis.enterDetails(doc2);
+       }
+       catch(Exception ex){
+           
+       }
         System.out.println("Button is working?");
         parent.setContentPane(dis);
         //redraw
@@ -727,6 +826,12 @@ public class Avail extends javax.swing.JPanel {
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
        DisplayDoc dis = new DisplayDoc(parent,reg);
         System.out.println("Button is working?");
+          try{
+           dis.enterDetails(doc3);
+       }
+       catch(Exception ex){
+           
+       }
         parent.setContentPane(dis);
         //redraw
                 parent.setSize(400, 449);
@@ -736,6 +841,12 @@ public class Avail extends javax.swing.JPanel {
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
      DisplayDoc dis = new DisplayDoc(parent,reg);
         System.out.println("Button is working?");
+          try{
+           dis.enterDetails(doc4);
+       }
+       catch(Exception ex){
+           
+       }
         parent.setContentPane(dis);
         //redraw
                 parent.setSize(400, 449);
@@ -745,6 +856,12 @@ public class Avail extends javax.swing.JPanel {
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
       DisplayDoc dis = new DisplayDoc(parent,reg);
         System.out.println("Button is working?");
+          try{
+           dis.enterDetails(doc5);
+       }
+       catch(Exception ex){
+           
+       }
         parent.setContentPane(dis);
         //redraw
                 parent.setSize(400, 449);
@@ -754,6 +871,12 @@ public class Avail extends javax.swing.JPanel {
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
     DisplayDoc dis = new DisplayDoc(parent,reg);
         System.out.println("Button is working?");
+          try{
+           dis.enterDetails(doc6);
+       }
+       catch(Exception ex){
+           
+       }
         parent.setContentPane(dis);
         //redraw
                 parent.setSize(400, 449);
@@ -763,6 +886,12 @@ public class Avail extends javax.swing.JPanel {
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
        DisplayDoc dis = new DisplayDoc(parent,reg);
         System.out.println("Button is working?");
+          try{
+           dis.enterDetails(doc7);
+       }
+       catch(Exception ex){
+           
+       }
         parent.setContentPane(dis);
         //redraw
                 parent.setSize(400, 449);
@@ -772,6 +901,12 @@ public class Avail extends javax.swing.JPanel {
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
        DisplayDoc dis = new DisplayDoc(parent,reg);
         System.out.println("Button is working?");
+          try{
+           dis.enterDetails(doc8);
+       }
+       catch(Exception ex){
+           
+       }
         parent.setContentPane(dis);
         //redraw
                 parent.setSize(400, 449);
@@ -781,6 +916,12 @@ public class Avail extends javax.swing.JPanel {
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
     DisplayDoc dis = new DisplayDoc(parent,reg);
         System.out.println("Button is working?");
+          try{
+           dis.enterDetails(doc9);
+       }
+       catch(Exception ex){
+           
+       }
         parent.setContentPane(dis);
         //redraw
                 parent.setSize(400, 449);
@@ -790,6 +931,12 @@ public class Avail extends javax.swing.JPanel {
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
      DisplayDoc dis = new DisplayDoc(parent,reg);
         System.out.println("Button is working?");
+          try{
+           dis.enterDetails(doc10);
+       }
+       catch(Exception ex){
+           
+       }
         parent.setContentPane(dis);
         //redraw
                 parent.setSize(400, 449);
@@ -798,7 +945,6 @@ public class Avail extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -812,7 +958,6 @@ public class Avail extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField2;
