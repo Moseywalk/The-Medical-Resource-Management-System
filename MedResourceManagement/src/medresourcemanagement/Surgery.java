@@ -25,7 +25,7 @@ public class Surgery extends Doctor {
     @Override
     public String toString() {
         String out;
-        out = name + "," + contactAddress + "," + contact + "," + contactID + "," + specialism + "," + DateOfLatestCert;
+        out = name + ";" + contactAddress + ";" + contact + ";" + contactID + ";" + specialism + ";" + DateOfLatestCert;
         return out;
     }
 
@@ -53,4 +53,11 @@ public class Surgery extends Doctor {
         contactID = s_contact;
         DateOfLatestCert = date;
     }
+        public boolean checkCert (){
+            
+            
+            
+            return true;
+        }
+            
 }

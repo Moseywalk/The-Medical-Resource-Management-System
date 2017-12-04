@@ -70,3 +70,11 @@ Wednesday 09:00 11:15
 Thursday 08:00 08:00
 Friday 16:00 16:00
 Saturday 09:00 17:00
+Gordon Hall
+Sunday 02:00 02:00
+Monday 15:00 23:00
+Tuesday 11:00 23:45
+Wednesday 09:00 11:15
+Thursday 08:00 08:00
+Friday 16:00 16:00
+Saturday 09:00 17:00

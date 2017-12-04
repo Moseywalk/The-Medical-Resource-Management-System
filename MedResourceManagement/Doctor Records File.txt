@@ -1,29 +1,29 @@
 CARDIOLOGY
-1
-Mary Shelley,297 Peartree Grove Guildford,Skype,Skype,CARDIOLOGY
+2
+Mary Shelley;297 Peartree Grove Guildford;Skype;m-shelly1;CARDIOLOGY
+Gordon Hall;14 Demesne Avenue, Holywood;Skype;hall.gordo;CARDIOLOGY
 PULMONOLOGY
 1
-Laura Penny,87 Primrose Way Ipswich,Facetime,Facetime,PULMONOLOGY
+Laura Penny;87 Primrose Way, Ipswich;Facetime;l.penny234@btinternet.com;PULMONOLOGY
 INFECTIOUS_DISEASE
-2
-Ciaran Bell,58 Windy Ridge Folkstone,Telephone,Telephone,INFECTIOUS_DISEASE
-Ciaran Bell,58 Windy Ridge Folkstone,Telephone,Telephone,INFECTIOUS_DISEASE
+1
+Ciaran Bell;58 Windy Ridge, Folkstone;Telephone;+44(0)8452126984;INFECTIOUS_DISEASE
 HEMATOLOGY
 1
-Conor Murphy,12 Front Road Leeds,Telephone,Telephone,HEMATOLOGY
+Conor Murphy;12 Front Road, Leeds;Telephone;+44(0)7941123456;HEMATOLOGY
 INTENSIVE_CARE_MEDICINE
 0
 NEUROLOGY
 1
-Carol Mckee,79 The Green Birmingham,Skype,Skype,NEUROLOGY
+Carol Mckee;79 The Green, Birmingham;Skype;Cmckee-25;NEUROLOGY
 OPHTHALMOLOGY
 0
 ORTHOPEDICS
 1
-Robert Jones,165 Main Street Glasgow,Facetime,Facetime,ORTHOPEDICS
+Robert Jones;165 Main Street, Glasgow;Facetime;R.jones@gmail.com;ORTHOPEDICS
 UROLOGY
 0
 SURGERY
 2
-John Smith,13 Value Avenue Bristol,Telephone,Telephone,SURGERY,12/05/2016
-Nicola Johnson,128 Ash Park Coleraine,Skype,Skype,SURGERY,24/11/2015
+John Smith;13 Value Avenue, Bristol;Telephone;+44(0)8452126984;SURGERY;12/05/2016
+Nicola Johnson;128 Ash Park, Coleraine;Skype;Nicky-j123;SURGERY;24/11/2015
