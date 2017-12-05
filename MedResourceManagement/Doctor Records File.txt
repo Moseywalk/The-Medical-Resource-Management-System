@@ -1,7 +1,6 @@
 CARDIOLOGY
-2
+1
 Mary Shelley;297 Peartree Grove Guildford;Skype;m-shelly1;CARDIOLOGY
-Gordon Hall;14 Demesne Avenue, Holywood;Skype;hall.gordo;CARDIOLOGY
 PULMONOLOGY
 1
 Laura Penny;87 Primrose Way, Ipswich;Facetime;l.penny234@btinternet.com;PULMONOLOGY
@@ -25,5 +24,5 @@ UROLOGY
 0
 SURGERY
 2
-John Smith;13 Value Avenue, Bristol;Telephone;+44(0)8452126984;SURGERY;12/05/2016
-Nicola Johnson;128 Ash Park, Coleraine;Skype;Nicky-j123;SURGERY;24/11/2015
+John Smith;13 Value Avenue, Bristol;Telephone;+44(0)8452126984;SURGERY;12-05-2016
+Nicola Johnson;128 Ash Park, Coleraine;Skype;Nicky-j123;SURGERY;24-11-2015

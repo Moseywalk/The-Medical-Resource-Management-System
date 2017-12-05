@@ -5,9 +5,11 @@
  */
 package gui;
 
+import medresourcemanagement.Register;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -19,18 +21,22 @@ public class DeleteBox implements ActionListener {
 
     private String output;
     private Register reg;
-
+    private JTextArea jTextArea1;
     public DeleteBox(JComboBox<String> jComboBox1, Register reg) {
         this.jComboBox = jComboBox1;
 
         this.reg = reg;
     }
 
+
+    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         String spec = (String) jComboBox.getSelectedItem();
         System.out.println(spec);
         this.output = spec;
+        
 
     }
 

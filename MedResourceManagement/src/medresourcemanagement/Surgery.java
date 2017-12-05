@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class Surgery extends Doctor {
 
-    public String DateOfLatestCert;
+    private String DateOfLatestCert;
 
     public Surgery() {
         super();
@@ -53,11 +53,8 @@ public class Surgery extends Doctor {
         contactID = s_contact;
         DateOfLatestCert = date;
     }
-        public boolean checkCert (){
-            
-            
-            
-            return true;
-        }
+     public String getDateofCert(){
+         return this.DateOfLatestCert;
+     }   
             
 }

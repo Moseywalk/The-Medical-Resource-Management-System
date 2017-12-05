@@ -5,6 +5,7 @@
  */
 package gui;
 
+import medresourcemanagement.Register;
 import javax.swing.JTextField;
 
 /**
@@ -12,18 +13,20 @@ import javax.swing.JTextField;
  * @author b00720507
  */
 public class Add extends javax.swing.JPanel {
+
     private Register reg;
+
     /**
      * Creates new form Add
      */
     public Add() {
-       
+
     }
 
     public Add(Register reg) {
         initComponents();
         //initiate objects
-         this.reg = reg;
+        this.reg = reg;
 
         SelectBox listen = new SelectBox(jComboBox2);
         jComboBox2.addActionListener(listen);
@@ -32,9 +35,7 @@ public class Add extends javax.swing.JPanel {
 
         AddButtonListener abl = new AddButtonListener(listen, listen2, jTextField1, jTextField2, jTextField3, this.reg);
         jButton1.addActionListener(abl);
-        
-        
-        
+
     }
 
     public JTextField getNameInput() {

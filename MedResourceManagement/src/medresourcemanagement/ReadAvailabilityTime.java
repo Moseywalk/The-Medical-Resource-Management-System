@@ -5,7 +5,6 @@
  */
 package medresourcemanagement;
 
-import gui.Register;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

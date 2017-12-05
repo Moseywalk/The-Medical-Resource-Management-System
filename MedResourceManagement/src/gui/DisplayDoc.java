@@ -5,6 +5,10 @@
  */
 package gui;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import medresourcemanagement.Register;
 import javax.swing.JFrame;
 import medresourcemanagement.Doctor;
 import medresourcemanagement.Specialism;
@@ -175,14 +179,32 @@ public class DisplayDoc extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     void enterDetails(Doctor doc1) {
-       jLabel1.setText(doc1.getName()); 
-       jLabel2.setText(doc1.getContactAddress()); 
-       jLabel3.setText(doc1.getPrefContact().toString());
-       jLabel4.setText(doc1.getContactID());
-       
-       if(doc1.getSpecialism()== Specialism.SURGERY){
-           Surgery sur = (Surgery)doc1;
-       }
-               
+        jLabel1.setText(doc1.getName());
+        jLabel2.setText(doc1.getContactAddress());
+        jLabel3.setText(doc1.getPrefContact().toString());
+        jLabel4.setText(doc1.getContactID());
+
+        if (doc1.getSpecialism() == Specialism.SURGERY) {
+            try {
+
+                DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                Date date = new Date();
+                System.out.println("Current date: " + dateFormat.format(date));
+                String working = dateFormat.format(date);
+
+                Surgery sur = (Surgery) doc1;
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+                Date surgDate = sdf.parse(sur.getDateofCert());
+                Date currentDate = date;
+
+                System.out.println(surgDate.toString());
+                System.out.println(currentDate.toString());
+
+            } catch (Exception ex) {
+                System.out.println("Something went wrong");
+            }
+
+        }
+
     }
 }
