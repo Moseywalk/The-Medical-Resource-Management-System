@@ -61,7 +61,7 @@ public class Register {
             switch (s) {
                 case CARDIOLOGY:
 
-                    if (cardioNo <= 10) {
+                    if (cardioNo < 10) {
                         cardioDocs[cardioNo] = (Cardiology) doc;
                         cardioNo++;
                         docsNo++;
@@ -71,7 +71,7 @@ public class Register {
                     }
                     break;
                 case PULMONOLOGY:
-                    if (pulmNo <= 10) {
+                    if (pulmNo < 10) {
                         pulmDocs[pulmNo] = (Pulmonology) doc;
                         pulmNo++;
                         docsNo++;
@@ -81,7 +81,7 @@ public class Register {
                     }
                     break;
                 case INFECTIOUS_DISEASE:
-                    if (infNo <= 10) {
+                    if (infNo < 10) {
                         infDocs[infNo] = (InfectiousDisease) doc;
                         infNo++;
                         docsNo++;
@@ -91,7 +91,7 @@ public class Register {
                     }
                     break;
                 case HEMATOLOGY:
-                    if (hemNo <= 10) {
+                    if (hemNo < 10) {
                         hemDocs[hemNo] = (Hematology) doc;
                         hemNo++;
                         docsNo++;
@@ -101,7 +101,7 @@ public class Register {
                     }
                     break;
                 case INTENSIVE_CARE_MEDICINE:
-                    if (intNo <= 10) {
+                    if (intNo < 10) {
                         intDocs[intNo] = (IntensiveCareMedicine) doc;
                         intNo++;
                         docsNo++;
@@ -111,7 +111,7 @@ public class Register {
                     }
                     break;
                 case NEUROLOGY:
-                    if (neuroNo <= 10) {
+                    if (neuroNo < 10) {
                         neuroDocs[neuroNo] = (Neurology) doc;
                         neuroNo++;
                         docsNo++;
@@ -121,7 +121,7 @@ public class Register {
                     }
                     break;
                 case OPHTHALMOLOGY:
-                    if (eyeNo <= 10) {
+                    if (eyeNo < 10) {
                         eyeDocs[eyeNo] = (Ophthalmology) doc;
                         eyeNo++;
                         docsNo++;
@@ -131,7 +131,7 @@ public class Register {
                     }
                     break;
                 case ORTHOPEDICS:
-                    if (orthoNo <= 10) {
+                    if (orthoNo < 10) {
                         orthoDocs[orthoNo] = (Orthopedics) doc;
                         orthoNo++;
                         docsNo++;
@@ -141,7 +141,7 @@ public class Register {
                     }
                     break;
                 case UROLOGY:
-                    if (uroNo <= 10) {
+                    if (uroNo < 10) {
                         uroDocs[uroNo] = (Urology) doc;
                         uroNo++;
                         docsNo++;
@@ -151,7 +151,7 @@ public class Register {
                     }
                     break;
                 case SURGERY:
-                    if (surgNo <= 10) {
+                    if (surgNo < 10) {
                         surgDocs[surgNo] = (Surgery) doc;
                         surgNo++;
                         docsNo++;
@@ -489,10 +489,10 @@ public class Register {
             try {
                 out[x] = cardioDocs[x].getName();
             } catch (NullPointerException ex) {
-                out[x] = "null";
+                out[x] = null;
             }
 
-            System.out.println(out[x]);
+            //System.out.println(out[x]);
 
         }
 
@@ -508,7 +508,7 @@ public class Register {
             } catch (NullPointerException ex) {
                 out[x] = "null";
             }
-            System.out.println("name " + out[x]);
+           // System.out.println("name " + out[x]);
 
         }
 
@@ -524,7 +524,7 @@ public class Register {
             } catch (NullPointerException ex) {
                 out[x] = "null";
             }
-            System.out.println("name " + out[x]);
+            //System.out.println("name " + out[x]);
 
         }
 
@@ -540,7 +540,7 @@ public class Register {
             } catch (NullPointerException ex) {
                 out[x] = "null";
             }
-            System.out.println("name " + out[x]);
+           // System.out.println("name " + out[x]);
 
         }
 
@@ -556,7 +556,7 @@ public class Register {
             } catch (NullPointerException ex) {
                 out[x] = "null";
             }
-            System.out.println("name " + out[x]);
+           // System.out.println("name " + out[x]);
 
         }
 
@@ -572,7 +572,7 @@ public class Register {
             } catch (NullPointerException ex) {
                 out[x] = "null";
             }
-            System.out.println("name " + out[x]);
+           // System.out.println("name " + out[x]);
 
         }
 
@@ -588,7 +588,7 @@ public class Register {
             } catch (NullPointerException ex) {
                 out[x] = "null";
             }
-            System.out.println("name " + out[x]);
+           // System.out.println("name " + out[x]);
 
         }
 
@@ -604,7 +604,7 @@ public class Register {
             } catch (NullPointerException ex) {
                 out[x] = "null";
             }
-            System.out.println("name " + out[x]);
+           // System.out.println("name " + out[x]);
 
         }
 
@@ -620,7 +620,7 @@ public class Register {
             } catch (NullPointerException ex) {
                 out[x] = "null";
             }
-            System.out.println("name " + out[x]);
+           // System.out.println("name " + out[x]);
 
         }
 
@@ -636,7 +636,7 @@ public class Register {
             } catch (NullPointerException ex) {
                 out[x] = "null";
             }
-            System.out.println("name " + out[x]);
+            //System.out.println("name " + out[x]);
 
         }
 

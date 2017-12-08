@@ -108,55 +108,55 @@ public class ReadAndLoad {
                 case "CARDIOLOGY":
                     System.out.println("Loaded and now creating new Cardio doc");
                     Cardiology temp = new Cardiology();
-                    temp.setInfo(null, tempContact, tempName, tempAddress, tempContactID);
+                    temp.setInfo(tempContact, tempName, tempAddress, tempContactID);
                     reg.addToRegister(temp);
                     break;
                 case "PULMONOLOGY":
                     System.out.println("Loaded and now creating new Pulmono doc");
                     Pulmonology temp1 = new Pulmonology();
-                    temp1.setInfo(null, tempContact, tempName, tempAddress, tempContactID);
+                    temp1.setInfo(tempContact, tempName, tempAddress, tempContactID);
                     reg.addToRegister(temp1);
                     break;
                 case "INFECTIOUS_DISEASE":
                     System.out.println("Loaded and now creating new Pulmono doc");
                     InfectiousDisease temp2 = new InfectiousDisease();
-                    temp2.setInfo(null, tempContact, tempName, tempAddress, tempContactID);
+                    temp2.setInfo(tempContact, tempName, tempAddress, tempContactID);
                     reg.addToRegister(temp2);
                     break;
                 case "HEMATOLOGY":
                     System.out.println("Loaded and now creating new HEMATOLOGY doc");
                     Hematology temp3 = new Hematology();
-                    temp3.setInfo(null, tempContact, tempName, tempAddress, tempContactID);
+                    temp3.setInfo(tempContact, tempName, tempAddress, tempContactID);
                     reg.addToRegister(temp3);
                     break;
                 case "INTENSIVE_CARE_MEDICINE":
                     System.out.println("Loaded and now creating new INTENSIVE_CARE_MEDICINE doc");
                     InfectiousDisease temp4 = new InfectiousDisease();
-                    temp4.setInfo(null, tempContact, tempName, tempAddress, tempContactID);
+                    temp4.setInfo(tempContact, tempName, tempAddress, tempContactID);
                     reg.addToRegister(temp4);
                     break;
                 case "NEUROLOGY":
                     System.out.println("Loaded and now creating new NEUROLOGY doc");
                     Neurology temp5 = new Neurology();
-                    temp5.setInfo(null, tempContact, tempName, tempAddress, tempContactID);
+                    temp5.setInfo(tempContact, tempName, tempAddress, tempContactID);
                     reg.addToRegister(temp5);
                     break;
                 case "OPHTHALMOLOGY":
                     System.out.println("Loaded and now creating new OPHTHALMOLOGY doc");
                     Ophthalmology temp6 = new Ophthalmology();
-                    temp6.setInfo(null, tempContact, tempName, tempAddress, tempContactID);
+                    temp6.setInfo(tempContact, tempName, tempAddress, tempContactID);
                     reg.addToRegister(temp6);
                     break;
                 case "ORTHOPEDICS":
                     System.out.println("Loaded and now creating new ORTHOPEDICS doc");
                     Orthopedics temp7 = new Orthopedics();
-                    temp7.setInfo(null, tempContact, tempName, tempAddress, tempContactID);
+                    temp7.setInfo(tempContact, tempName, tempAddress, tempContactID);
                     reg.addToRegister(temp7);
                     break;
                 case "UROLOGY":
                     System.out.println("Loaded and now creating new UROLOGY doc");
                     Urology temp8 = new Urology();
-                    temp8.setInfo(null, tempContact, tempName, tempAddress, tempContactID);
+                    temp8.setInfo(tempContact, tempName, tempAddress, tempContactID);
                     reg.addToRegister(temp8);
                     break;
                     

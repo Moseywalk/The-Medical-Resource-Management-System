@@ -26,10 +26,6 @@ public class SelectBox implements ActionListener {
         this.jComboBox = jComboBox2;
     }
 
-    SelectBox(JComboBox<String> jComboBox1, JComboBox<String> jComboBox2) {
-        this.jComboBox = jComboBox1;
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
 

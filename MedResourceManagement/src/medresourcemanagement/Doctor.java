@@ -38,6 +38,12 @@ public abstract class Doctor {
         contactID = JOptionPane.showInputDialog("Enter contact info");
 
     }
+        public void setInfo(String contactStyle, String s_name, String s_address, String s_contact) {
+        name = s_name;
+        contactAddress = s_address;
+        contact = (PrefContact.valueOf(contactStyle));
+        contactID = s_contact;
+    }
 
     public void setAvailabilityTimes(String sunSt, String sunEt, String monSt, String monEt, String tueSt, String tueEt,
             String wedSt, String wedEt, String thuSt, String thuEt, String friSt, String friEt, String satSt, String satEt) {
@@ -112,11 +118,6 @@ public abstract class Doctor {
         return this.contactAddress;
     }
 
-    public void setInfo(String spec, String contactStyle, String s_name, String s_address, String s_contact) {
-        name = s_name;
-        contactAddress = s_address;
-        contact = (PrefContact.valueOf(contactStyle));
-        contactID = s_contact;
-    }
+
 
 }

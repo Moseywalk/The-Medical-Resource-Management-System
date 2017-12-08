@@ -5,7 +5,8 @@ PULMONOLOGY
 1
 Laura Penny;87 Primrose Way, Ipswich;Facetime;l.penny234@btinternet.com;PULMONOLOGY
 INFECTIOUS_DISEASE
-1
+2
+Ciaran Bell;58 Windy Ridge, Folkstone;Telephone;+44(0)8452126984;INFECTIOUS_DISEASE
 Ciaran Bell;58 Windy Ridge, Folkstone;Telephone;+44(0)8452126984;INFECTIOUS_DISEASE
 HEMATOLOGY
 1

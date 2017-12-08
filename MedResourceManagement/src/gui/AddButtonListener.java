@@ -56,56 +56,56 @@ public class AddButtonListener implements ActionListener {
             
             switch (spec) {
                 case "Cardiology":
-                    System.out.println("addddddddddddding");
+    
                     Doctor temp = new Cardiology();
-                    temp.setInfo(spec,contactStyle,s_name,s_address,s_contact);
+                    temp.setInfo(contactStyle,s_name,s_address,s_contact);
                     reg.addToRegister(temp);
                     break;
                 case "Pulmonology":
                     Doctor temp1 = new Pulmonology();
-                    System.out.println(spec + " add button listener");
-                    temp1.setInfo(spec,contactStyle,s_name,s_address,s_contact);
+                 
+                    temp1.setInfo(contactStyle,s_name,s_address,s_contact);
                     reg.addToRegister(temp1);
                     break;
                 case "Infectious Disease":
                    
                     Doctor temp2 = new InfectiousDisease();
-                    temp2.setInfo(spec,contactStyle,s_name,s_address,s_contact);
+                    temp2.setInfo(contactStyle,s_name,s_address,s_contact);
                     reg.addToRegister(temp2);
                     break;
                 case "Hematology":
                     Doctor temp3 = new Hematology();
-                    temp3.setInfo(spec,contactStyle,s_name,s_address,s_contact);
+                    temp3.setInfo(contactStyle,s_name,s_address,s_contact);
                     reg.addToRegister(temp3);
                     break;
                 case "Intensive Care Medicine":
                    Doctor temp4 = new IntensiveCareMedicine();
-                    temp4.setInfo(spec,contactStyle,s_name,s_address,s_contact);
+                    temp4.setInfo(contactStyle,s_name,s_address,s_contact);
                     reg.addToRegister(temp4);
                     break;
                 case "Neurology":
                     Doctor temp5 = new Neurology();
-                    temp5.setInfo(spec,contactStyle,s_name,s_address,s_contact);
+                    temp5.setInfo(contactStyle,s_name,s_address,s_contact);
                     reg.addToRegister(temp5);
                     break;
                 case "Ophthalmology":
                      Doctor temp6 = new Ophthalmology();
-                    temp6.setInfo(spec,contactStyle,s_name,s_address,s_contact);
+                    temp6.setInfo(contactStyle,s_name,s_address,s_contact);
                     reg.addToRegister(temp6);
                     break;
                 case "Orthopedics":
                    Doctor temp7 = new Orthopedics();
-                    temp7.setInfo(spec,contactStyle,s_name,s_address,s_contact);
+                    temp7.setInfo(contactStyle,s_name,s_address,s_contact);
                     reg.addToRegister(temp7);
                     break;
                 case "Urology":
                     Doctor temp8 = new Urology();
-                    temp8.setInfo(spec,contactStyle,s_name,s_address,s_contact);
+                    temp8.setInfo(contactStyle,s_name,s_address,s_contact);
                     reg.addToRegister(temp8);
                     break;
                 case "Surgery":
                    Doctor temp9 = new Surgery();
-                    temp9.setInfo(spec,contactStyle,s_name,s_address,s_contact);
+                    temp9.setInfo(contactStyle,s_name,s_address,s_contact);
                     reg.addToRegister(temp9);
                     break;
 

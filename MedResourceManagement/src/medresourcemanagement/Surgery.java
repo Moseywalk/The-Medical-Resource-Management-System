@@ -29,16 +29,7 @@ public class Surgery extends Doctor {
         return out;
     }
 
-    @Override
-
-    
-//       public void setInfo(String spec, String contactStyle, String s_name, String s_address, String s_contact) {
-//        name = s_name;
-//        contactAddress = s_address;
-//        contact = (PrefContact.valueOf(contactStyle));
-//        contactID = s_contact;
-//        DateOfLatestCert = JOptionPane.showInputDialog(null, "Enter date of latest Cert");
-//    }
+   
         public void setInfo(String spec, String contactStyle, String s_name, String s_address, String s_contact) {
         name = s_name;
         contactAddress = s_address;
