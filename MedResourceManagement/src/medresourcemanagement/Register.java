@@ -481,13 +481,13 @@ public class Register {
 
     }
 
-    /* -------------------------------------------------------*/
-    public String[] cardioNames() {
-        String[] out = new String[10];
+    /* ------------------------GetNames-------------------------------*/
+        public String[] getNames(Doctor[] list, int docNo) {
+        String[] out = new String[docNo];
 
-        for (int x = 0; x < 10; x++) {
+        for (int x = 0; x < docNo; x++) {
             try {
-                out[x] = cardioDocs[x].getName();
+                out[x] = list[x].getName();
             } catch (NullPointerException ex) {
                 out[x] = null;
             }
@@ -498,145 +498,17 @@ public class Register {
 
         return out;
     }
-
-    public String[] pulmNames() {
+    public String[] getNamesWithNulls(Doctor[] list) {
         String[] out = new String[10];
 
         for (int x = 0; x < 10; x++) {
             try {
-                out[x] = pulmDocs[x].getName();
+                out[x] = list[x].getName();
             } catch (NullPointerException ex) {
-                out[x] = "null";
+                out[x] = null;
             }
-           // System.out.println("name " + out[x]);
 
-        }
-
-        return out;
-    }
-
-    public String[] infNames() {
-        String[] out = new String[10];
-
-        for (int x = 0; x < 10; x++) {
-            try {
-                out[x] = infDocs[x].getName();
-            } catch (NullPointerException ex) {
-                out[x] = "null";
-            }
-            //System.out.println("name " + out[x]);
-
-        }
-
-        return out;
-    }
-
-    public String[] hemNames() {
-        String[] out = new String[10];
-
-        for (int x = 0; x < 10; x++) {
-            try {
-                out[x] = hemDocs[x].getName();
-            } catch (NullPointerException ex) {
-                out[x] = "null";
-            }
-           // System.out.println("name " + out[x]);
-
-        }
-
-        return out;
-    }
-
-    public String[] intNames() {
-        String[] out = new String[10];
-
-        for (int x = 0; x < 10; x++) {
-            try {
-                out[x] = intDocs[x].getName();
-            } catch (NullPointerException ex) {
-                out[x] = "null";
-            }
-           // System.out.println("name " + out[x]);
-
-        }
-
-        return out;
-    }
-
-    public String[] neuroNames() {
-        String[] out = new String[10];
-
-        for (int x = 0; x < 10; x++) {
-            try {
-                out[x] = neuroDocs[x].getName();
-            } catch (NullPointerException ex) {
-                out[x] = "null";
-            }
-           // System.out.println("name " + out[x]);
-
-        }
-
-        return out;
-    }
-
-    public String[] eyeNames() {
-        String[] out = new String[10];
-
-        for (int x = 0; x < 10; x++) {
-            try {
-                out[x] = eyeDocs[x].getName();
-            } catch (NullPointerException ex) {
-                out[x] = "null";
-            }
-           // System.out.println("name " + out[x]);
-
-        }
-
-        return out;
-    }
-
-    public String[] orthoNames() {
-        String[] out = new String[10];
-
-        for (int x = 0; x < 10; x++) {
-            try {
-                out[x] = orthoDocs[x].getName();
-            } catch (NullPointerException ex) {
-                out[x] = "null";
-            }
-           // System.out.println("name " + out[x]);
-
-        }
-
-        return out;
-    }
-
-    public String[] uroNames() {
-        String[] out = new String[10];
-
-        for (int x = 0; x < 10; x++) {
-            try {
-                out[x] = uroDocs[x].getName();
-            } catch (NullPointerException ex) {
-                out[x] = "null";
-            }
-           // System.out.println("name " + out[x]);
-
-        }
-
-        return out;
-    }
-
-    public String[] surgNames() {
-        String[] out = new String[10];
-
-        for (int x = 0; x < 10; x++) {
-            try {
-                out[x] = surgDocs[x].getName();
-            } catch (NullPointerException ex) {
-                out[x] = "null";
-            }
-            //System.out.println("name " + out[x]);
+            //System.out.println(out[x]);
 
         }
 

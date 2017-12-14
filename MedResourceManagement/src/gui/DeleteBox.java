@@ -41,35 +41,35 @@ public class DeleteBox implements ActionListener {
   if (spec !=null) {
                     switch (spec) {
                         case "Cardiology":
-                  jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.cardioNames()));
+                  jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.getNames(reg.getSpecArray("Cardiology"), reg.getCardioNo())));
 
                             break;
                         case "Pulmonology":
-                        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.pulmNames()));
+                        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.getNames(reg.getSpecArray("Pulmonology"), reg.getPulmNo())));
                             break;
                         case "Infectious Disease":
-          jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.intNames()));
+          jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.getNames(reg.getSpecArray("Infectious Disease"), reg.getInfNo())));
                             break;
                         case "Hematology":
-                          jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.hemNames()));
+                          jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.getNames(reg.getSpecArray("Hematology"), reg.getHemNo())));
                             break;
                         case "Intensive Care Medicine":
-                     jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.intNames()));
+                     jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.getNames(reg.getSpecArray("Intensive Care Medicine"), reg.getIntNo())));
                             break;
                         case "Neurology":
-                     jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.neuroNames()));
+                     jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.getNames(reg.getSpecArray(spec), reg.getNeuroNo())));
                             break;
                         case "Ophthalmology":
-         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.eyeNames()));
+         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.getNames(reg.getSpecArray(spec), reg.getEyeNo())));
                             break;
                         case "Orthopedics":
-             jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.orthoNames()));
+             jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.getNames(reg.getSpecArray(spec),reg.getOrthoNo())));
                             break;
                         case "Urology":
-                       jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.uroNames()));
+                       jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.getNames(reg.getSpecArray(spec), reg.getUroNo())));
                             break;
                         case "Surgery":
-                 jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.surgNames()));
+                 jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(reg.getNames(reg.getSpecArray(spec),reg.getSurgNo())));
                             break;
 
                         default:

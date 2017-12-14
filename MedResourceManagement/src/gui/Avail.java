@@ -26,7 +26,6 @@ import medresourcemanagement.Doctor;
 public class Avail extends javax.swing.JPanel {
 
     private Register reg;
-    private boolean isAvailable;
     private JFrame parent;
     private String day;
 
@@ -65,7 +64,7 @@ public class Avail extends javax.swing.JPanel {
             System.err.println("Can't find a doc!");
         }
         jLabel1.setText(names[0]);
-        if (names[0] == "null") {
+        if (names[0] == null) {
             jTextField2.setBackground(Color.GRAY);
         } else {
             //set to a colour
@@ -84,7 +83,7 @@ public class Avail extends javax.swing.JPanel {
             System.err.println("Can't find a doc!");
         }
         jLabel3.setText(names[1]);
-        if (names[1] == "null") {
+        if (names[1] == null) {
             jTextField3.setBackground(Color.GRAY);
         } else {
             //set to a colour
@@ -103,7 +102,7 @@ public class Avail extends javax.swing.JPanel {
         }
         //end
         jLabel4.setText(names[2]);
-        if (names[2] == "null") {
+        if (names[2] == null) {
             jTextField4.setBackground(Color.GRAY);
         } else {
             //set to a colour
@@ -122,7 +121,7 @@ public class Avail extends javax.swing.JPanel {
         }
         //end
         jLabel5.setText(names[3]);
-        if (names[3] == "null") {
+        if (names[3] == null) {
             jTextField5.setBackground(Color.GRAY);
         } else {
             //set to a colour
@@ -141,7 +140,7 @@ public class Avail extends javax.swing.JPanel {
         }
         //end
         jLabel10.setText(names[4]);
-        if (names[4] == "null") {
+        if (names[4] == null) {
             jTextField6.setBackground(Color.GRAY);
         } else {
             //set to a colour
@@ -160,7 +159,7 @@ public class Avail extends javax.swing.JPanel {
         }
         //end
         jLabel6.setText(names[5]);
-        if (names[5] == "null") {
+        if (names[5] == null) {
             jTextField7.setBackground(Color.GRAY);
         } else {
             //set to a colour
@@ -179,7 +178,7 @@ public class Avail extends javax.swing.JPanel {
         }
         //end
         jLabel7.setText(names[6]);
-        if (names[6] == "null") {
+        if (names[6] == null) {
             jTextField8.setBackground(Color.GRAY);
         } else {
             //set to a colour
@@ -198,7 +197,7 @@ public class Avail extends javax.swing.JPanel {
         }
         //end
         jLabel8.setText(names[7]);
-        if (names[7] == "null") {
+        if (names[7] == null) {
             jTextField9.setBackground(Color.GRAY);
         } else {
             //set to a colour
@@ -217,7 +216,7 @@ public class Avail extends javax.swing.JPanel {
         }
         //end
         jLabel9.setText(names[8]);
-        if (names[8] == "null") {
+        if (names[8] == null) {
             jTextField10.setBackground(Color.GRAY);
         } else {
             //set to a colour
@@ -236,7 +235,7 @@ public class Avail extends javax.swing.JPanel {
         }
         //end
         jLabel11.setText(names[9]);
-        if (names[9] == "null") {
+        if (names[9] == null) {
             jTextField11.setBackground(Color.GRAY);
         } else {
             //set to a colour
@@ -393,7 +392,6 @@ public class Avail extends javax.swing.JPanel {
         jTextField2.setBackground(java.awt.Color.lightGray);
         jTextField2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel1.setText("Doc 1");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mouseClick(evt);
@@ -408,7 +406,6 @@ public class Avail extends javax.swing.JPanel {
 
         jTextField3.setBackground(java.awt.Color.lightGray);
 
-        jLabel3.setText("Doc 2");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -423,7 +420,6 @@ public class Avail extends javax.swing.JPanel {
 
         jTextField4.setBackground(java.awt.Color.lightGray);
 
-        jLabel4.setText("Doc 3");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -438,7 +434,6 @@ public class Avail extends javax.swing.JPanel {
 
         jTextField5.setBackground(java.awt.Color.lightGray);
 
-        jLabel5.setText("Doc 4");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
@@ -453,7 +448,6 @@ public class Avail extends javax.swing.JPanel {
 
         jTextField6.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel10.setText("Doc 5");
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel10MouseClicked(evt);
@@ -468,7 +462,6 @@ public class Avail extends javax.swing.JPanel {
 
         jTextField7.setBackground(java.awt.Color.lightGray);
 
-        jLabel6.setText("Doc 6");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
@@ -483,7 +476,7 @@ public class Avail extends javax.swing.JPanel {
 
         jTextField8.setBackground(java.awt.Color.lightGray);
 
-        jLabel7.setText("Doc 7");
+        jLabel7.setToolTipText("");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel7MouseClicked(evt);
@@ -498,7 +491,6 @@ public class Avail extends javax.swing.JPanel {
 
         jTextField9.setBackground(java.awt.Color.lightGray);
 
-        jLabel8.setText("Doc 8");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);
@@ -513,7 +505,6 @@ public class Avail extends javax.swing.JPanel {
 
         jTextField10.setBackground(java.awt.Color.lightGray);
 
-        jLabel9.setText("Doc 9");
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel9MouseClicked(evt);
@@ -533,7 +524,6 @@ public class Avail extends javax.swing.JPanel {
             }
         });
 
-        jLabel11.setText("Doc 10");
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel11MouseClicked(evt);
@@ -569,26 +559,21 @@ public class Avail extends javax.swing.JPanel {
                         .addGap(149, 149, 149)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel9))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8)))))
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(98, 98, 98)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 46, Short.MAX_VALUE))
+                .addGap(0, 75, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -637,7 +622,7 @@ public class Avail extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -655,51 +640,51 @@ public class Avail extends javax.swing.JPanel {
         jTextField8.setBackground(Color.LIGHT_GRAY);
         jTextField9.setBackground(Color.LIGHT_GRAY);
         if (jComboBox1.getSelectedItem().toString().equals("Cardiology")) {
-            String[] names = reg.cardioNames();
+            String[] names = reg.getNamesWithNulls(reg.getSpecArray("Cardiology"));
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Pulmonology")) {
-            String[] names = reg.pulmNames();
+            String[] names = reg.getNamesWithNulls(reg.getSpecArray("Pulmonology"));
             //displayColourRed();
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Infectious Disease")) {
-            String[] names = reg.infNames();
+            String[] names = reg.getNamesWithNulls(reg.getSpecArray("Infectious Disease"));
             //displayColourRed();
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Hematology")) {
-            String[] names = reg.hemNames();
+            String[] names = reg.getNamesWithNulls(reg.getSpecArray("Hematology"));
             //displayColourRed();
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Intensive Care Medicine")) {
-            String[] names = reg.intNames();
+            String[] names = reg.getNamesWithNulls(reg.getSpecArray("Intensive Care Medicine"));
             //displayColourRed();
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Neurology")) {
-            String[] names = reg.neuroNames();
+            String[] names = reg.getNamesWithNulls(reg.getSpecArray("Neurology"));
             //displayColourRed();
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Ophthalmology")) {
-            String[] names = reg.eyeNames();
+            String[] names = reg.getNamesWithNulls(reg.getSpecArray("Ophthalmology"));
             //displayColourRed();
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Orthopedics")) {
-            String[] names = reg.orthoNames();
+            String[] names = reg.getNamesWithNulls(reg.getSpecArray("Orthopedics"));
             //displayColourRed();
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Urology")) {
-            String[] names = reg.uroNames();
+            String[] names = reg.getNamesWithNulls(reg.getSpecArray("Urology"));
             //displayColourRed();
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Surgery")) {
-            String[] names = reg.surgNames();
+            String[] names = reg.getNamesWithNulls(reg.getSpecArray("Surgery"));
             //displayColourRed();
             colourChanger(names);
 
