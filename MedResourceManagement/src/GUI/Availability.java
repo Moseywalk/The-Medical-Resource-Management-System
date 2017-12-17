@@ -6,16 +6,12 @@
 package gui;
 
 import medresourcemanagement.Register;
-import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Rectangle;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.Date;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 import medresourcemanagement.Doctor;
 
@@ -23,19 +19,18 @@ import medresourcemanagement.Doctor;
  *
  * @author b00712596
  */
-public class Avail extends javax.swing.JPanel {
+public class Availability extends javax.swing.JPanel {
 
     private Register reg;
     private JFrame parent;
     private String day;
-
     private SelectBox listen;
-    Doctor doc1, doc2, doc3, doc4, doc5, doc6, doc7, doc8, doc9, doc10;
+    private Doctor[] docs = new Doctor[10];
 
     /**
-     * Creates new form Avail
+     * Creates new form Availability
      */
-    public Avail(Register reg, JFrame parent) {
+    public Availability(Register reg, JFrame parent) {
         initComponents();
         this.reg = reg;
         this.parent = parent;
@@ -52,195 +47,62 @@ public class Avail extends javax.swing.JPanel {
         jComboBox1.addActionListener(listen);
         String spec = listen.getOutput();
 
+        //reset labels
+        jLabel1.setText(null);
+        jLabel3.setText(null);
+        jLabel4.setText(null);
+        jLabel5.setText(null);
+        jLabel6.setText(null);
+        jLabel7.setText(null);
+        jLabel8.setText(null);
+        jLabel9.setText(null);
+        jLabel10.setText(null);
+        jLabel11.setText(null);
+
     }
-      private void colourChanger(String[] names) {
+
+    private void colourChanger(String[] names) {
+
+        //first label 
+        this.changeColour(names[0], 0, jLabel1, jTextField2);
+        //second label
+        this.changeColour(names[1], 1, jLabel3, jTextField3);
+        //third  label
+        this.changeColour(names[2], 2, jLabel4, jTextField4);
+        //forth  label
+        this.changeColour(names[3], 3, jLabel5, jTextField5);
+        //fifth  label
+        this.changeColour(names[4], 4, jLabel10, jTextField6);
+        //six  label
+        this.changeColour(names[5], 5, jLabel6, jTextField7);
+        //7  label
+        this.changeColour(names[6], 6, jLabel7, jTextField8);
+        //8  label
+        this.changeColour(names[7], 7, jLabel8, jTextField9);
+        //9  label
+        this.changeColour(names[8], 8, jLabel9, jTextField10);
+        //10  label
+        this.changeColour(names[9], 9, jLabel11, jTextField11);
+    }
+
+    private void changeColour(String name, int docNo, JLabel jLabel1, JTextField jTextField2) {
         int[] x;
         //first label
-        jLabel1.setText(names[0]);
-        x = reg.searchReg(names[0]);
+        jLabel1.setText(name);
+        x = reg.searchReg(name);
         try {
-            doc1 = reg.getDoc(x);
-        } catch (NullPointerException ex) {
-            System.err.println("Can't find a doc!");
-        }
-        jLabel1.setText(names[0]);
-        if (names[0] == null) {
-            jTextField2.setBackground(Color.GRAY);
-        } else {
-            //set to a colour
-            try {
-                setColour(jTextField2, doc1);
-            } catch (Exception ex) {
-                System.err.println("Couldn't find a doc to set colour");
-            }
-        }
+            docs[docNo] = reg.getDoc(x);
 
-        //second label
-        x = reg.searchReg(names[1]);
-        try {
-            doc2 = reg.getDoc(x);
         } catch (NullPointerException ex) {
             System.err.println("Can't find a doc!");
         }
-        jLabel3.setText(names[1]);
-        if (names[1] == null) {
-            jTextField3.setBackground(Color.GRAY);
+        jLabel1.setText(name);
+        if (name == null) {
+            jTextField2.setBackground(Color.LIGHT_GRAY);
         } else {
             //set to a colour
             try {
-                setColour(jTextField3, doc2);
-            } catch (Exception ex) {
-                System.err.println("Couldn't find a doc to set colour");
-            }
-        }
-        //third  label
-        x = reg.searchReg(names[2]);
-        try {
-            doc3 = reg.getDoc(x);
-        } catch (NullPointerException ex) {
-            System.err.println("Can't find a doc!");
-        }
-        //end
-        jLabel4.setText(names[2]);
-        if (names[2] == null) {
-            jTextField4.setBackground(Color.GRAY);
-        } else {
-            //set to a colour
-            try {
-                setColour(jTextField4, doc3);
-            } catch (Exception ex) {
-                System.err.println("Couldn't find a doc to set colour");
-            }
-        }
-        //forth  label
-        x = reg.searchReg(names[3]);
-        try {
-            doc4 = reg.getDoc(x);
-        } catch (NullPointerException ex) {
-            System.err.println("Can't find a doc!");
-        }
-        //end
-        jLabel5.setText(names[3]);
-        if (names[3] == null) {
-            jTextField5.setBackground(Color.GRAY);
-        } else {
-            //set to a colour
-            try {
-                setColour(jTextField5, doc4);
-            } catch (Exception ex) {
-                System.err.println("Couldn't find a doc to set colour");
-            }
-        }
-        //fifth  label
-        x = reg.searchReg(names[4]);
-        try {
-            doc5 = reg.getDoc(x);
-        } catch (NullPointerException ex) {
-            System.err.println("Can't find a doc!");
-        }
-        //end
-        jLabel10.setText(names[4]);
-        if (names[4] == null) {
-            jTextField6.setBackground(Color.GRAY);
-        } else {
-            //set to a colour
-            try {
-                setColour(jTextField6, doc5);
-            } catch (Exception ex) {
-                System.err.println("Couldn't find a doc to set colour");
-            }
-        }
-        //six  label
-        x = reg.searchReg(names[5]);
-        try {
-            doc6 = reg.getDoc(x);
-        } catch (NullPointerException ex) {
-            System.err.println("Can't find a doc!");
-        }
-        //end
-        jLabel6.setText(names[5]);
-        if (names[5] == null) {
-            jTextField7.setBackground(Color.GRAY);
-        } else {
-            //set to a colour
-            try {
-                setColour(jTextField7, doc6);
-            } catch (Exception ex) {
-                System.err.println("Couldn't find a doc to set colour");
-            }
-        }
-        //7  label
-        x = reg.searchReg(names[6]);
-        try {
-            doc7 = reg.getDoc(x);
-        } catch (NullPointerException ex) {
-            System.err.println("Can't find a doc!");
-        }
-        //end
-        jLabel7.setText(names[6]);
-        if (names[6] == null) {
-            jTextField8.setBackground(Color.GRAY);
-        } else {
-            //set to a colour
-            try {
-                setColour(jTextField8, doc7);
-            } catch (Exception ex) {
-                System.err.println("Couldn't find a doc to set colour");
-            }
-        }
-        //8  label
-        x = reg.searchReg(names[2]);
-        try {
-            doc8 = reg.getDoc(x);
-        } catch (NullPointerException ex) {
-            System.err.println("Can't find a doc!");
-        }
-        //end
-        jLabel8.setText(names[7]);
-        if (names[7] == null) {
-            jTextField9.setBackground(Color.GRAY);
-        } else {
-            //set to a colour
-            try {
-                setColour(jTextField9, doc8);
-            } catch (Exception ex) {
-                System.err.println("Couldn't find a doc to set colour");
-            }
-        }
-        //9  label
-        x = reg.searchReg(names[8]);
-        try {
-            doc9 = reg.getDoc(x);
-        } catch (NullPointerException ex) {
-            System.err.println("Can't find a doc!");
-        }
-        //end
-        jLabel9.setText(names[8]);
-        if (names[8] == null) {
-            jTextField10.setBackground(Color.GRAY);
-        } else {
-            //set to a colour
-            try {
-                setColour(jTextField10, doc9);
-            } catch (Exception ex) {
-                System.err.println("Couldn't find a doc to set colour");
-            }
-        }
-        //10  label
-        x = reg.searchReg(names[9]);
-        try {
-            doc10 = reg.getDoc(x);
-        } catch (NullPointerException ex) {
-            System.err.println("Can't find a doc!");
-        }
-        //end
-        jLabel11.setText(names[9]);
-        if (names[9] == null) {
-            jTextField11.setBackground(Color.GRAY);
-        } else {
-            //set to a colour
-            try {
-                setColour(jTextField11, doc10);
+                setColour(jTextField2, docs[docNo]);
             } catch (Exception ex) {
                 System.err.println("Couldn't find a doc to set colour");
             }
@@ -357,30 +219,43 @@ public class Avail extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField10 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
 
-        jLabel2.setText("Please select Doctor Speciality");
+        jTextField10.setBackground(java.awt.Color.lightGray);
+
+        jTextField5.setBackground(java.awt.Color.lightGray);
+
+        jTextField11.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField11ActionPerformed(evt);
+            }
+        });
+
+        jTextField6.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel2.setText("Please select doctor speciality to see availability");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Please Select--", "Cardiology", "Pulmonology", "Infectious Disease", "Hematology", "Intensive Care Medicine", "Neurology", "Ophthalmology", "Orthopedics", "Urology", "Surgery" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -389,37 +264,46 @@ public class Avail extends javax.swing.JPanel {
             }
         });
 
+        jTextField7.setBackground(java.awt.Color.lightGray);
+
         jTextField2.setBackground(java.awt.Color.lightGray);
         jTextField2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mouseClick(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Avail.this.mouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                mouseExit(evt);
-            }
-        });
+        jTextField8.setBackground(java.awt.Color.lightGray);
 
         jTextField3.setBackground(java.awt.Color.lightGray);
 
+        jTextField9.setBackground(java.awt.Color.lightGray);
+
+        jTextField4.setBackground(java.awt.Color.lightGray);
+
+        jLabel1.setText("jLabel1");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel1MouseExited(evt);
+            }
+        });
+
+        jLabel3.setText("jLabel3");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                mouseEntered1(evt);
+                jLabel3MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jLabel3MouseExited(evt);
             }
         });
 
-        jTextField4.setBackground(java.awt.Color.lightGray);
-
+        jLabel4.setText("jLabel4");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -432,8 +316,7 @@ public class Avail extends javax.swing.JPanel {
             }
         });
 
-        jTextField5.setBackground(java.awt.Color.lightGray);
-
+        jLabel5.setText("jLabel5");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
@@ -446,22 +329,7 @@ public class Avail extends javax.swing.JPanel {
             }
         });
 
-        jTextField6.setBackground(new java.awt.Color(204, 204, 204));
-
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel10MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel10MouseExited(evt);
-            }
-        });
-
-        jTextField7.setBackground(java.awt.Color.lightGray);
-
+        jLabel6.setText("jLabel6");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
@@ -474,9 +342,7 @@ public class Avail extends javax.swing.JPanel {
             }
         });
 
-        jTextField8.setBackground(java.awt.Color.lightGray);
-
-        jLabel7.setToolTipText("");
+        jLabel7.setText("jLabel7");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel7MouseClicked(evt);
@@ -489,8 +355,7 @@ public class Avail extends javax.swing.JPanel {
             }
         });
 
-        jTextField9.setBackground(java.awt.Color.lightGray);
-
+        jLabel8.setText("jLabel8");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);
@@ -503,8 +368,7 @@ public class Avail extends javax.swing.JPanel {
             }
         });
 
-        jTextField10.setBackground(java.awt.Color.lightGray);
-
+        jLabel9.setText("jLabel9");
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel9MouseClicked(evt);
@@ -517,13 +381,20 @@ public class Avail extends javax.swing.JPanel {
             }
         });
 
-        jTextField11.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+        jLabel10.setText("jLabel10");
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel10MouseExited(evt);
             }
         });
 
+        jLabel11.setText("jLabel11");
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel11MouseClicked(evt);
@@ -542,89 +413,113 @@ public class Avail extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(115, 115, 115)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(59, 59, 59)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel11))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel3))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel1))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel4))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel5))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel6))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel7))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel8))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel9))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel10)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField9))
-                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(149, 149, 149)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 75, Short.MAX_VALUE))
+                        .addGap(59, 59, 59)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
+                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addGap(94, 94, 94))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField11ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
 
@@ -645,279 +540,272 @@ public class Avail extends javax.swing.JPanel {
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Pulmonology")) {
             String[] names = reg.getNamesWithNulls(reg.getSpecArray("Pulmonology"));
-            //displayColourRed();
+
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Infectious Disease")) {
             String[] names = reg.getNamesWithNulls(reg.getSpecArray("Infectious Disease"));
-            //displayColourRed();
+
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Hematology")) {
             String[] names = reg.getNamesWithNulls(reg.getSpecArray("Hematology"));
-            //displayColourRed();
+
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Intensive Care Medicine")) {
             String[] names = reg.getNamesWithNulls(reg.getSpecArray("Intensive Care Medicine"));
-            //displayColourRed();
+
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Neurology")) {
             String[] names = reg.getNamesWithNulls(reg.getSpecArray("Neurology"));
-            //displayColourRed();
+
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Ophthalmology")) {
             String[] names = reg.getNamesWithNulls(reg.getSpecArray("Ophthalmology"));
-            //displayColourRed();
+
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Orthopedics")) {
             String[] names = reg.getNamesWithNulls(reg.getSpecArray("Orthopedics"));
-            //displayColourRed();
+
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Urology")) {
             String[] names = reg.getNamesWithNulls(reg.getSpecArray("Urology"));
-            //displayColourRed();
+
             colourChanger(names);
 
         } else if (jComboBox1.getSelectedItem().toString().equals("Surgery")) {
             String[] names = reg.getNamesWithNulls(reg.getSpecArray("Surgery"));
-            //displayColourRed();
+
             colourChanger(names);
 
         }
 
-
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jLabel11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseExited
-        jLabel11.setForeground(Color.black);
-    }//GEN-LAST:event_jLabel11MouseExited
+    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+        jLabel1.setForeground(Color.red);
+    }//GEN-LAST:event_jLabel1MouseEntered
 
-    private void jLabel11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseEntered
-        jLabel11.setForeground(Color.red);
-    }//GEN-LAST:event_jLabel11MouseEntered
+    private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
+        jLabel1.setForeground(Color.black);
+    }//GEN-LAST:event_jLabel1MouseExited
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         DisplayDoc dis = new DisplayDoc(parent, reg);
         System.out.println("Button is working?");
         try {
-            dis.enterDetails(doc10);
+            dis.enterDetails(docs[0]);
         } catch (Exception ex) {
 
         }
         parent.setContentPane(dis);
         //redraw
         parent.setSize(400, 449);
-        parent.setSize(400, 450);        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel11MouseClicked
+        parent.setSize(400, 450);
+    }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void jLabel10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseExited
-        jLabel10.setForeground(Color.black);
-    }//GEN-LAST:event_jLabel10MouseExited
-
-    private void jLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseEntered
-        jLabel10.setForeground(Color.red);
-    }//GEN-LAST:event_jLabel10MouseEntered
-
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        DisplayDoc dis = new DisplayDoc(parent, reg);
-        System.out.println("Button is working?");
-        try {
-            dis.enterDetails(doc5);
-        } catch (Exception ex) {
-
-        }
-        parent.setContentPane(dis);
-        //redraw
-        parent.setSize(400, 449);
-        parent.setSize(400, 450);           // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel10MouseClicked
-
-    private void jLabel9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseExited
-        jLabel9.setForeground(Color.black);
-    }//GEN-LAST:event_jLabel9MouseExited
-
-    private void jLabel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseEntered
-        jLabel9.setForeground(Color.red);
-    }//GEN-LAST:event_jLabel9MouseEntered
-
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-        DisplayDoc dis = new DisplayDoc(parent, reg);
-        System.out.println("Button is working?");
-        try {
-            dis.enterDetails(doc9);
-        } catch (Exception ex) {
-
-        }
-        parent.setContentPane(dis);
-        //redraw
-        parent.setSize(400, 449);
-        parent.setSize(400, 450);         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel9MouseClicked
-
-    private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
-        jLabel8.setForeground(Color.black);
-    }//GEN-LAST:event_jLabel8MouseExited
-
-    private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
-        jLabel8.setForeground(Color.red);
-    }//GEN-LAST:event_jLabel8MouseEntered
-
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        DisplayDoc dis = new DisplayDoc(parent, reg);
-        System.out.println("Button is working?");
-        try {
-            dis.enterDetails(doc8);
-        } catch (Exception ex) {
-
-        }
-        parent.setContentPane(dis);
-        //redraw
-        parent.setSize(400, 449);
-        parent.setSize(400, 450);           // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel8MouseClicked
-
-    private void jLabel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseExited
-        jLabel7.setForeground(Color.black);
-    }//GEN-LAST:event_jLabel7MouseExited
-
-    private void jLabel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseEntered
-        jLabel7.setForeground(Color.red);
-    }//GEN-LAST:event_jLabel7MouseEntered
-
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        DisplayDoc dis = new DisplayDoc(parent, reg);
-        System.out.println("Button is working?");
-        try {
-            dis.enterDetails(doc7);
-        } catch (Exception ex) {
-
-        }
-        parent.setContentPane(dis);
-        //redraw
-        parent.setSize(400, 449);
-        parent.setSize(400, 450);          // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel7MouseClicked
-
-    private void jLabel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseExited
-        jLabel6.setForeground(Color.black);
-    }//GEN-LAST:event_jLabel6MouseExited
-
-    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
-        jLabel6.setForeground(Color.red);
-    }//GEN-LAST:event_jLabel6MouseEntered
-
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        DisplayDoc dis = new DisplayDoc(parent, reg);
-        System.out.println("Button is working?");
-        try {
-            dis.enterDetails(doc6);
-        } catch (Exception ex) {
-
-        }
-        parent.setContentPane(dis);
-        //redraw
-        parent.setSize(400, 449);
-        parent.setSize(400, 450);           // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel6MouseClicked
-
-    private void jLabel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseExited
-        jLabel5.setForeground(Color.black);
-    }//GEN-LAST:event_jLabel5MouseExited
-
-    private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
-        jLabel5.setForeground(Color.red);
-    }//GEN-LAST:event_jLabel5MouseEntered
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        DisplayDoc dis = new DisplayDoc(parent, reg);
-        System.out.println("Button is working?");
-        try {
-            dis.enterDetails(doc4);
-        } catch (Exception ex) {
-
-        }
-        parent.setContentPane(dis);
-        //redraw
-        parent.setSize(400, 449);
-        parent.setSize(400, 450);         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel5MouseClicked
-
-    private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
-        jLabel4.setForeground(Color.black);
-    }//GEN-LAST:event_jLabel4MouseExited
-
-    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
-        jLabel4.setForeground(Color.red);
-    }//GEN-LAST:event_jLabel4MouseEntered
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        DisplayDoc dis = new DisplayDoc(parent, reg);
-        System.out.println("Button is working?");
-        try {
-            dis.enterDetails(doc3);
-        } catch (Exception ex) {
-
-        }
-        parent.setContentPane(dis);
-        //redraw
-        parent.setSize(400, 449);
-        parent.setSize(400, 450);      // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel4MouseClicked
+    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
+        jLabel3.setForeground(Color.red);
+    }//GEN-LAST:event_jLabel3MouseEntered
 
     private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
         jLabel3.setForeground(Color.black);
     }//GEN-LAST:event_jLabel3MouseExited
 
-    private void mouseEntered1(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseEntered1
-        jLabel3.setForeground(Color.red);
-    }//GEN-LAST:event_mouseEntered1
-
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         DisplayDoc dis = new DisplayDoc(parent, reg);
+        System.out.println("Button is working?");
         try {
-            dis.enterDetails(doc2);
+            dis.enterDetails(docs[1]);
         } catch (Exception ex) {
 
         }
-        System.out.println("Button is working?");
         parent.setContentPane(dis);
         //redraw
         parent.setSize(400, 449);
         parent.setSize(400, 450);
     }//GEN-LAST:event_jLabel3MouseClicked
 
-    private void mouseExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseExit
-        jLabel1.setForeground(Color.black);
-    }//GEN-LAST:event_mouseExit
+    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
+        jLabel4.setForeground(Color.red);
+    }//GEN-LAST:event_jLabel4MouseEntered
 
-    private void mouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseEntered
+    private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
+        jLabel4.setForeground(Color.black);
+    }//GEN-LAST:event_jLabel4MouseExited
 
-        jLabel1.setForeground(Color.red);
-    }//GEN-LAST:event_mouseEntered
-
-    private void mouseClick(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseClick
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         DisplayDoc dis = new DisplayDoc(parent, reg);
-
+        System.out.println("Button is working?");
         try {
-            dis.enterDetails(doc1);
+            dis.enterDetails(docs[2]);
         } catch (Exception ex) {
 
         }
-        System.out.println("Button1 is working?");
         parent.setContentPane(dis);
         //redraw
         parent.setSize(400, 449);
         parent.setSize(400, 450);
-    }//GEN-LAST:event_mouseClick
+    }//GEN-LAST:event_jLabel4MouseClicked
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
+        jLabel5.setForeground(Color.red);
+    }//GEN-LAST:event_jLabel5MouseEntered
+
+    private void jLabel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseExited
+        jLabel5.setForeground(Color.black);
+    }//GEN-LAST:event_jLabel5MouseExited
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        DisplayDoc dis = new DisplayDoc(parent, reg);
+        System.out.println("Button is working?");
+        try {
+            dis.enterDetails(docs[3]);
+        } catch (Exception ex) {
+
+        }
+        parent.setContentPane(dis);
+        //redraw
+        parent.setSize(400, 449);
+        parent.setSize(400, 450);
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
+        jLabel6.setForeground(Color.red);
+    }//GEN-LAST:event_jLabel6MouseEntered
+
+    private void jLabel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseExited
+        jLabel6.setForeground(Color.black);
+    }//GEN-LAST:event_jLabel6MouseExited
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        DisplayDoc dis = new DisplayDoc(parent, reg);
+        System.out.println("Button is working?");
+        try {
+            dis.enterDetails(docs[4]);
+        } catch (Exception ex) {
+
+        }
+        parent.setContentPane(dis);
+        //redraw
+        parent.setSize(400, 449);
+        parent.setSize(400, 450);
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseEntered
+        jLabel7.setForeground(Color.red);
+    }//GEN-LAST:event_jLabel7MouseEntered
+
+    private void jLabel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseExited
+        jLabel7.setForeground(Color.black);
+    }//GEN-LAST:event_jLabel7MouseExited
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        DisplayDoc dis = new DisplayDoc(parent, reg);
+        System.out.println("Button is working?");
+        try {
+            dis.enterDetails(docs[5]);
+        } catch (Exception ex) {
+
+        }
+        parent.setContentPane(dis);
+        //redraw
+        parent.setSize(400, 449);
+        parent.setSize(400, 450);
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
+        jLabel8.setForeground(Color.red);
+    }//GEN-LAST:event_jLabel8MouseEntered
+
+    private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
+        jLabel8.setForeground(Color.black);
+    }//GEN-LAST:event_jLabel8MouseExited
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        DisplayDoc dis = new DisplayDoc(parent, reg);
+        System.out.println("Button is working?");
+        try {
+            dis.enterDetails(docs[6]);
+        } catch (Exception ex) {
+
+        }
+        parent.setContentPane(dis);
+        //redraw
+        parent.setSize(400, 449);
+        parent.setSize(400, 450);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jLabel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseEntered
+        jLabel9.setForeground(Color.red);
+    }//GEN-LAST:event_jLabel9MouseEntered
+
+    private void jLabel9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseExited
+        jLabel9.setForeground(Color.black);
+    }//GEN-LAST:event_jLabel9MouseExited
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        DisplayDoc dis = new DisplayDoc(parent, reg);
+        System.out.println("Button is working?");
+        try {
+            dis.enterDetails(docs[7]);
+        } catch (Exception ex) {
+
+        }
+        parent.setContentPane(dis);
+        //redraw
+        parent.setSize(400, 449);
+        parent.setSize(400, 450);
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void jLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseEntered
+        jLabel10.setForeground(Color.red);
+    }//GEN-LAST:event_jLabel10MouseEntered
+
+    private void jLabel10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseExited
+        jLabel10.setForeground(Color.black);
+    }//GEN-LAST:event_jLabel10MouseExited
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        DisplayDoc dis = new DisplayDoc(parent, reg);
+        System.out.println("Button is working?");
+        try {
+            dis.enterDetails(docs[8]);
+        } catch (Exception ex) {
+
+        }
+        parent.setContentPane(dis);
+        //redraw
+        parent.setSize(400, 449);
+        parent.setSize(400, 450);
+    }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void jLabel11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseEntered
+        jLabel11.setForeground(Color.red);
+    }//GEN-LAST:event_jLabel11MouseEntered
+
+    private void jLabel11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseExited
+        jLabel11.setForeground(Color.black);
+    }//GEN-LAST:event_jLabel11MouseExited
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        DisplayDoc dis = new DisplayDoc(parent, reg);
+        System.out.println("Button is working?");
+        try {
+            dis.enterDetails(docs[9]);
+        } catch (Exception ex) {
+
+        }
+        parent.setContentPane(dis);
+        //redraw
+        parent.setSize(400, 449);
+        parent.setSize(400, 450);
+    }//GEN-LAST:event_jLabel11MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -944,7 +832,5 @@ public class Avail extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
-
-  
 
 }

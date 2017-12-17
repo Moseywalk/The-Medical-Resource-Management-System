@@ -43,7 +43,6 @@ public class Delete extends javax.swing.JPanel {
                     switch (spec) {
                         case "Cardiology":
                             reg.deleteFromRegister(name, reg.getSpecArray("Cardiology"), "Cardiology");
-
                             break;
                         case "Pulmonology":
                             reg.deleteFromRegister(name, reg.getSpecArray("Pulmonology"), "Pulmonology");
@@ -83,8 +82,6 @@ public class Delete extends javax.swing.JPanel {
                  System.err.println(ex.getCause());
              }
    
-
-                
                 jComboBox1.setSelectedIndex(-1);
                 jComboBox2.setSelectedIndex(-1);
             }

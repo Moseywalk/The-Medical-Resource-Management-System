@@ -18,11 +18,8 @@ public class SelectBox implements ActionListener {
     private String output;
     private JComboBox jComboBox;
 
-    public SelectBox() {
 
-    }
-
-    SelectBox(JComboBox<String> jComboBox2) {
+   public SelectBox(JComboBox<String> jComboBox2) {
         this.jComboBox = jComboBox2;
     }
 
@@ -30,7 +27,7 @@ public class SelectBox implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         String out = (String) jComboBox.getSelectedItem();
-        System.out.println(out);
+        //System.out.println(out);
         this.output = out;
     }
 

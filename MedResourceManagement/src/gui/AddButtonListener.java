@@ -8,7 +8,7 @@ package gui;
 import medresourcemanagement.Register;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import medresourcemanagement.*;
 
@@ -104,8 +104,9 @@ public class AddButtonListener implements ActionListener {
                     reg.addToRegister(temp8);
                     break;
                 case "Surgery":
-                   Doctor temp9 = new Surgery();
-                    temp9.setInfo(contactStyle,s_name,s_address,s_contact);
+                   Surgery temp9 = new Surgery();
+                   String certDate = JOptionPane.showInputDialog("Enter date of last Certification");
+                    temp9.setInfo(contactStyle,s_name,s_address,s_contact,certDate);
                     reg.addToRegister(temp9);
                     break;
 

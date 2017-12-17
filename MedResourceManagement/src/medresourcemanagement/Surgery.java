@@ -30,14 +30,14 @@ public class Surgery extends Doctor {
     }
 
    
-        public void setInfo(String spec, String contactStyle, String s_name, String s_address, String s_contact) {
+        public void setInfo(String contactStyle, String s_name, String s_address, String s_contact) {
         name = s_name;
         contactAddress = s_address;
         contact = (PrefContact.valueOf(contactStyle));
         contactID = s_contact;
         DateOfLatestCert = JOptionPane.showInputDialog("Enter Date of Last Certificate");
     }
-        public void setInfo(String spec, String contactStyle, String s_name, String s_address, String s_contact, String date) {
+        public void setInfo(String contactStyle, String s_name, String s_address, String s_contact, String date) {
         name = s_name;
         contactAddress = s_address;
         contact = (PrefContact.valueOf(contactStyle));

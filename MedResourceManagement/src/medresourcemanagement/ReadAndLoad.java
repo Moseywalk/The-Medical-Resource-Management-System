@@ -191,7 +191,7 @@ public class ReadAndLoad {
               
                     System.out.println("Loaded and now creating new Surgeon");
                     Surgery temp = new Surgery();
-                    temp.setInfo(null, tempContact, tempName, tempAddress, tempContactID, tempDate);
+                    temp.setInfo( tempContact, tempName, tempAddress, tempContactID, tempDate);
                     reg.addToRegister(temp);
                
     }

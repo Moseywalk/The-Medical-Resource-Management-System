@@ -70,8 +70,8 @@ public class MyFrame extends JFrame {
         availability.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Avail av = new Avail(reg, self);
-                setContentPane(av);
+                 Availability avPanel = new Availability(reg, self);
+                setContentPane(avPanel);
 
                 //gets rid of bug 
                 setSize(400, 449);
@@ -80,8 +80,8 @@ public class MyFrame extends JFrame {
             }
         });
 
-        Add newDoc = new Add(reg);
-        this.setContentPane(newDoc);
+          Availability avPanel = new Availability(reg, self);
+        this.setContentPane(avPanel);
 
         this.setVisible(true);
     }
