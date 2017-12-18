@@ -27,7 +27,7 @@ public class ReadAndLoad {
 //     while(bf.ready()){
 //         System.out.println(bf.readLine());
 //     }
-     bf = new BufferedReader(read);
+        bf = new BufferedReader(read);
         //first look for CARDIO DOCS Tag
 
         input = (bf.readLine());
@@ -48,7 +48,7 @@ public class ReadAndLoad {
             this.readIn(input);
         }
         input = (bf.readLine());
-       System.out.println(input);
+        System.out.println(input);
         if ("HEMATOLOGY".equals(input)) {
             this.readIn(input);
         }
@@ -58,12 +58,12 @@ public class ReadAndLoad {
             this.readIn(input);
         }
         input = (bf.readLine());
-       System.out.println(input);
+        System.out.println(input);
         if ("NEUROLOGY".equals(input)) {
             this.readIn(input);
         }
         input = (bf.readLine());
-       System.out.println(input);
+        System.out.println(input);
         if ("OPHTHALMOLOGY".equals(input)) {
             this.readIn(input);
         }
@@ -82,7 +82,6 @@ public class ReadAndLoad {
         if ("SURGERY".equals(input)) {
             this.readInSurg();
         }
-        
 
     }
 
@@ -92,13 +91,13 @@ public class ReadAndLoad {
         //then nextline char will indicate number cardio of records
         int i = Integer.parseInt(bf.readLine());
 
-        System.out.println(i+" Record to read in...");
+        System.out.println(i + " Record to read in...");
         // next X lines will be records
         for (int x = 0; x < i; x++) {
             input = bf.readLine();
-           
+
             tokens = input.split(";");
-           //  System.out.println(tokens[0] + tokens[1] + tokens[2] + tokens[3]);
+            //  System.out.println(tokens[0] + tokens[1] + tokens[2] + tokens[3]);
             tempName = tokens[0];
             tempAddress = tokens[1];
             tempContact = tokens[2];
@@ -159,9 +158,9 @@ public class ReadAndLoad {
                     temp8.setInfo(tempContact, tempName, tempAddress, tempContactID);
                     reg.addToRegister(temp8);
                     break;
-                    
-                    
-                default: System.err.println("something went wrong in load");
+
+                default:
+                    System.err.println("something went wrong in load");
                     break;
             }
 
@@ -169,8 +168,8 @@ public class ReadAndLoad {
     }
 
     private void readInSurg() throws IOException {
-       String input;
-       String tempDate;
+        String input;
+        String tempDate;
         String[] tokens;
         //then nextline char will indicate number cardio of records
         int i = Integer.parseInt(bf.readLine());
@@ -187,13 +186,12 @@ public class ReadAndLoad {
             tempContactID = tokens[3];
             tempDate = tokens[5];
             //time to make a new instanse of doc baby!
-           
-              
-                    System.out.println("Loaded and now creating new Surgeon");
-                    Surgery temp = new Surgery();
-                    temp.setInfo( tempContact, tempName, tempAddress, tempContactID, tempDate);
-                    reg.addToRegister(temp);
-               
-    }
+
+            System.out.println("Loaded and now creating new Surgeon");
+            Surgery temp = new Surgery();
+            temp.setInfo(tempContact, tempName, tempAddress, tempContactID, tempDate);
+            reg.addToRegister(temp);
+
+        }
     }
 }

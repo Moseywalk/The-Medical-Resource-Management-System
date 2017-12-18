@@ -1,8 +1,6 @@
 package medresourcemanagement;
 
 import java.time.LocalTime;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 /**
  *
@@ -15,7 +13,7 @@ public abstract class Doctor {
     protected PrefContact contact;
     protected String contactID;
     protected Specialism specialism;
-
+    //all times sun-sat kept in seperate object
     protected TimesAvailaby timesAva;
 
     public Doctor() {
@@ -31,13 +29,6 @@ public abstract class Doctor {
 
     public abstract void setSpecialism();
 
-    public void setInfo() {
-        name = JOptionPane.showInputDialog("Enter name");
-        contactAddress = JOptionPane.showInputDialog("Enter Address");
-        contact = (PrefContact.valueOf(JOptionPane.showInputDialog("Select contact type (Telephone/Skype/Facetime")));
-        contactID = JOptionPane.showInputDialog("Enter contact info");
-
-    }
         public void setInfo(String contactStyle, String s_name, String s_address, String s_contact) {
         name = s_name;
         contactAddress = s_address;
@@ -63,31 +54,37 @@ public abstract class Doctor {
             case "Sun":
                 out[0] = timesAva.getSunStartTime();
                 out[1] = timesAva.getSunEndTime();
+                 System.out.println("medresourcemanagement.Doctor.getDayTimes() - Sunday");
                 break;
             case "Mon":
                 out[0] = timesAva.getMonStartTime();
                 out[1] = timesAva.getMonEndTime();
-                System.out.println("medresourcemanagement.Doctor.getDayTimes()");
+                System.out.println("medresourcemanagement.Doctor.getDayTimes() - Monday");
                 break;
             case "Tue":
                 out[0] = timesAva.getTueStartTime();
                 out[1] = timesAva.getTueEndTime();
+                 System.out.println("medresourcemanagement.Doctor.getDayTimes() - Tuesday");
                 break;
             case "Wed":
                 out[0] = timesAva.getWedStartTime();
                 out[1] = timesAva.getWedEndTime();
+                 System.out.println("medresourcemanagement.Doctor.getDayTimes() - Wednesday");
                 break;
             case "Thu":
                 out[0] = timesAva.getThurStartTime();
                 out[1] = timesAva.getThursEndTime();
+                System.out.println("medresourcemanagement.Doctor.getDayTimes() - Thursday");
                 break;
             case "Fri":
                 out[0] = timesAva.getFriStartTime();
                 out[1] = timesAva.getFriEndTime();
+                 System.out.println("medresourcemanagement.Doctor.getDayTimes() - Friday");
                 break;
             case "Sat":
                 out[0] = timesAva.getSatStartTime();
                 out[1] = timesAva.getSatEndTime();
+                 System.out.println("medresourcemanagement.Doctor.getDayTimes() - Saturday");
                 break;
             default:
 

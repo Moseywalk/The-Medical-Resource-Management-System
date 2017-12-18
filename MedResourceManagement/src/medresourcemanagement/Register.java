@@ -246,14 +246,14 @@ public class Register {
 
         } catch (Exception ex) {
             System.out.println(ex.getCause());
-            System.out.println("Couldn't find doctor with specified name in register ");
+            System.out.println("Couldn't find doctor called "+name+" in register...");
         }
 
     }
 
     private void sortNull(int index, Doctor[] docArray) {
         //move null to end
-        System.out.println("Sort");
+        System.out.println("Array sorted...");
         for (int a = index; a < 10; a++) {
             if (a != 9) {
                 docArray[a] = docArray[a + 1];
@@ -291,11 +291,12 @@ public class Register {
         }
 
         if (check >= 0 && !found) {
-            System.out.println("Doctor Found at " + check + " in cardio");
+            System.out.println("Doctor Found at " + check);
             indexes[0] = 1;
             indexes[1] = check;
             found = true;
-        } else {
+        } 
+        else {
             try {
                 check = searchSpecReg(name, pulmDocs);
             } catch (Exception ex) {
@@ -307,7 +308,8 @@ public class Register {
             indexes[0] = 2;
             indexes[1] = check;
             found = true;
-        } else {
+        } 
+        else {
 
             try {
                 check = searchSpecReg(name, infDocs);
@@ -320,7 +322,8 @@ public class Register {
             indexes[0] = 3;
             indexes[1] = check;
             found = true;
-        } else {
+        } 
+        else {
 
             try {
                 check = searchSpecReg(name, hemDocs);
@@ -333,9 +336,9 @@ public class Register {
             indexes[0] = 4;
             indexes[1] = check;
             found = true;
-        } else {
+        } 
+        else {
             try {
-
                 check = searchSpecReg(name, intDocs);
             } catch (Exception ex) {
 
@@ -346,7 +349,8 @@ public class Register {
             indexes[0] = 5;
             indexes[1] = check;
             found = true;
-        } else {
+        } 
+        else {
             try {
 
                 check = searchSpecReg(name, neuroDocs);
@@ -359,7 +363,8 @@ public class Register {
             indexes[0] = 6;
             indexes[1] = check;
             found = true;
-        } else {
+        } 
+        else {
             try {
                 check = searchSpecReg(name, eyeDocs);
             } catch (Exception ex) {
@@ -371,7 +376,8 @@ public class Register {
             indexes[0] = 7;
             indexes[1] = check;
             found = true;
-        } else {
+        }
+        else {
             try {
                 check = searchSpecReg(name, orthoDocs);
             } catch (Exception ex) {
@@ -383,7 +389,8 @@ public class Register {
             indexes[0] = 8;
             indexes[1] = check;
             found = true;
-        } else {
+        }
+        else {
 
             try {
                 check = searchSpecReg(name, uroDocs);
@@ -396,7 +403,8 @@ public class Register {
             indexes[0] = 9;
             indexes[1] = check;
             found = true;
-        } else {
+        } 
+        else {
             try {
                 check = searchSpecReg(name, surgDocs);
             } catch (Exception ex) {
@@ -533,7 +541,7 @@ public class Register {
                     out = hemDocs;
                     break;
                 case "Intensive Care Medicine":
-                    out = infDocs;
+                    out = intDocs;
                     break;
                 case "Neurology":
                     out = neuroDocs;

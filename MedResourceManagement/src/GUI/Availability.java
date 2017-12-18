@@ -110,7 +110,9 @@ public class Availability extends javax.swing.JPanel {
     }
 
     private void setColour(JTextField jTextField, Doctor doc) {
+        //What's the time?
         LocalTime timeNow = LocalTime.now();
+        //somewhere to put the start and end times from each doc
         LocalTime[] startAndEnd = new LocalTime[2];
         switch (day) {
             case "Sun":
@@ -118,7 +120,8 @@ public class Availability extends javax.swing.JPanel {
                 if (startAndEnd[0] == startAndEnd[1]) {
                     System.out.println("unavailable");
                     jTextField.setBackground(Color.red);
-                } else if (startAndEnd[0].isBefore(timeNow) && startAndEnd[1].isAfter(timeNow)) {
+                }// if startTime < now < endTime 
+                else if (startAndEnd[0].isBefore(timeNow) && startAndEnd[1].isAfter(timeNow)) {
                     jTextField.setBackground(Color.green);
                 } else {
                     jTextField.setBackground(Color.red);

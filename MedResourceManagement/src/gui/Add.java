@@ -19,9 +19,6 @@ public class Add extends javax.swing.JPanel {
     /**
      * Creates new form Add
      */
-    public Add() {
-
-    }
 
     public Add(Register reg) {
         initComponents();

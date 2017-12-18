@@ -29,23 +29,25 @@ public class Surgery extends Doctor {
         return out;
     }
 
-   
-        public void setInfo(String contactStyle, String s_name, String s_address, String s_contact) {
+    @Override
+    public void setInfo(String contactStyle, String s_name, String s_address, String s_contact) {
         name = s_name;
-        contactAddress = s_address;
+        contactAddress = s_address; 
         contact = (PrefContact.valueOf(contactStyle));
         contactID = s_contact;
         DateOfLatestCert = JOptionPane.showInputDialog("Enter Date of Last Certificate");
     }
-        public void setInfo(String contactStyle, String s_name, String s_address, String s_contact, String date) {
+
+    public void setInfo(String contactStyle, String s_name, String s_address, String s_contact, String date) {
         name = s_name;
         contactAddress = s_address;
         contact = (PrefContact.valueOf(contactStyle));
         contactID = s_contact;
         DateOfLatestCert = date;
     }
-     public String getDateofCert(){
-         return this.DateOfLatestCert;
-     }   
-            
+
+    public String getDateofCert() {
+        return this.DateOfLatestCert;
+    }
+
 }

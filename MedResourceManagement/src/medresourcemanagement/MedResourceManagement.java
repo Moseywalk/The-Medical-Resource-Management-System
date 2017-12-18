@@ -15,16 +15,9 @@ public class MedResourceManagement {
     }
 
     public void setUpObjs() {
-      
-        MyFrame frame = new MyFrame();
+        Register reg = new Register();
+        MyFrame frame = new MyFrame(reg);
     
-        
-        //example new surgeon 
-//        Doctor s = new Surgery();
-//        Doctor t = new Cardiology();
-//        reg.addToRegister(s);
-//        reg.addToRegister(t);
-//        reg.deleteFromRegister("Gordon", reg.surgDocs);
       
     }
 }

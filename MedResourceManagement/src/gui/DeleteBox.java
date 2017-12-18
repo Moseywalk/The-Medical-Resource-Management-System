@@ -9,6 +9,7 @@ import medresourcemanagement.Register;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 /**
  *
  * @author b00720507
@@ -29,7 +30,7 @@ public class DeleteBox implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String spec = (String) jComboBox.getSelectedItem();
-        System.out.println(spec);
+     
         this.output = spec;
 
         if (spec != null) {
@@ -71,6 +72,7 @@ public class DeleteBox implements ActionListener {
                     break;
 
             }
+          
 
         }
     }

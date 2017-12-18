@@ -8,6 +8,7 @@ package gui;
 import medresourcemanagement.Register;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -77,6 +78,7 @@ public class Delete extends javax.swing.JPanel {
                             break;
 
                     }
+                      JOptionPane.showMessageDialog(null, name + " has been deleted from register");
              }
              catch(Exception ex){
                  System.err.println(ex.getCause());

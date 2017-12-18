@@ -20,8 +20,14 @@ public class MyFrame extends JFrame {
 
     public Register reg;
     public JFrame self;
-    public MyFrame() {
-        self = this;
+    
+    public MyFrame(Register regIn) {
+        //set up objects
+        //this is so jframe referenece can be passed to actionlisteners
+        self = this; 
+        this.reg = regIn;
+        
+        //boring frame stuff 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         //set location to centre
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
@@ -30,9 +36,9 @@ public class MyFrame extends JFrame {
         this.setLocation(x - 200, y - 225);
         this.setSize(400, 450);
         this.setTitle("Medical Resource Management");
+        
 
-        reg = new Register();
-
+        //add menu objects (also boring!)
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("Menu");
         JMenuItem input = new JMenuItem("New Doctor");
@@ -43,13 +49,14 @@ public class MyFrame extends JFrame {
         menu.add(input);
         menu.add(delete);
         menu.add(availability);
-
+        
+        //add action listeners 
         input.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Add doc = new Add(reg);
                 setContentPane(doc);
-
+                
                 //gets rid of bug 
                 setSize(400, 449);
                 setSize(400, 450);
@@ -80,7 +87,7 @@ public class MyFrame extends JFrame {
             }
         });
 
-          Availability avPanel = new Availability(reg, self);
+        Availability avPanel = new Availability(reg, self);
         this.setContentPane(avPanel);
 
         this.setVisible(true);
