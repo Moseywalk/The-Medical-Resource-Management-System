@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import medresourcemanagement.Doctor;
+import medresourcemanagement.Report;
 
 /**
  *
@@ -114,8 +115,7 @@ public class Availability extends javax.swing.JPanel {
         LocalTime timeNow = LocalTime.now();
         //somewhere to put the start and end times from each doc
         LocalTime[] startAndEnd = new LocalTime[2];
-        switch (day) {
-            case "Sun":
+
                 startAndEnd = doc.getDayTimes(day);
                 if (startAndEnd[0] == startAndEnd[1]) {
                     System.out.println("unavailable");
@@ -127,90 +127,7 @@ public class Availability extends javax.swing.JPanel {
                     jTextField.setBackground(Color.red);
                 }
 
-                break;
-            case "Mon":
-                startAndEnd = doc.getDayTimes(day);
-                if (startAndEnd[0] == startAndEnd[1]) {
-                    System.out.println("unavailable");
-                    jTextField.setBackground(Color.red);
-                } else if (startAndEnd[0].isBefore(timeNow) && startAndEnd[1].isAfter(timeNow)) {
-                    jTextField.setBackground(Color.green);
-                } else {
-                    jTextField.setBackground(Color.red);
-                }
 
-                break;
-
-            case "Tue":
-                startAndEnd = doc.getDayTimes(day);
-                if (startAndEnd[0] == startAndEnd[1]) {
-                    System.out.println("unavailable");
-                    jTextField.setBackground(Color.red);
-                } else if (startAndEnd[0].isBefore(timeNow) && startAndEnd[1].isAfter(timeNow)) {
-                    jTextField.setBackground(Color.green);
-                } else {
-                    jTextField.setBackground(Color.red);
-                }
-
-                break;
-
-            case "Wed":
-                startAndEnd = doc.getDayTimes(day);
-                if (startAndEnd[0] == startAndEnd[1]) {
-                    System.out.println("unavailable");
-                    jTextField.setBackground(Color.red);
-                } else if (startAndEnd[0].isBefore(timeNow) && startAndEnd[1].isAfter(timeNow)) {
-                    jTextField.setBackground(Color.green);
-                } else {
-                    jTextField.setBackground(Color.red);
-                }
-
-                break;
-
-            case "Thu":
-                startAndEnd = doc.getDayTimes(day);
-                if (startAndEnd[0] == startAndEnd[1]) {
-                    System.out.println("unavailable");
-                    jTextField.setBackground(Color.red);
-                } else if (startAndEnd[0].isBefore(timeNow) && startAndEnd[1].isAfter(timeNow)) {
-                    jTextField.setBackground(Color.green);
-                } else {
-                    jTextField.setBackground(Color.red);
-                }
-
-                break;
-
-            case "Fri":
-                startAndEnd = doc.getDayTimes(day);
-                if (startAndEnd[0] == startAndEnd[1]) {
-                    System.out.println("unavailable");
-                    jTextField.setBackground(Color.red);
-                } else if (startAndEnd[0].isBefore(timeNow) && startAndEnd[1].isAfter(timeNow)) {
-                    jTextField.setBackground(Color.green);
-                } else {
-                    jTextField.setBackground(Color.red);
-                }
-
-                break;
-
-            case "Sat":
-                startAndEnd = doc.getDayTimes(day);
-                if (startAndEnd[0] == startAndEnd[1]) {
-                    System.out.println("unavailable");
-                    jTextField.setBackground(Color.red);
-                } else if (startAndEnd[0].isBefore(timeNow) && startAndEnd[1].isAfter(timeNow)) {
-                    jTextField.setBackground(Color.green);
-                } else {
-                    jTextField.setBackground(Color.red);
-                }
-
-                break;
-
-            default:
-
-                break;
-
-        }
     }
 
     /**
@@ -824,7 +741,28 @@ public class Availability extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    
+     Report report = new Report(reg);
+        System.out.println("gui.Availability.jButton1ActionPerformed()");
+     String out = report.genReport(day,reg.getCardioNo(),reg.getSpecArray("Cardiology"));
+        System.out.println(out);
+     String out1 = report.genReport(day,reg.getCardioNo(),reg.getSpecArray("Pulmonology"));
+        System.out.println(out1);
+     String out2 = report.genReport(day,reg.getCardioNo(),reg.getSpecArray("Infectious Disease"));
+        System.out.println(out2);
+     String out3 = report.genReport(day,reg.getCardioNo(),reg.getSpecArray("Hematology"));
+        System.out.println(out3);
+     String out4 = report.genReport(day,reg.getCardioNo(),reg.getSpecArray("Intensive Care Medicine"));
+        System.out.println(out4);
+     String out5 = report.genReport(day,reg.getCardioNo(),reg.getSpecArray("Neurology"));
+        System.out.println(out5);
+     String out6 = report.genReport(day,reg.getCardioNo(),reg.getSpecArray("Ophthalmology"));
+        System.out.println(out6);
+     String out7 = report.genReport(day,reg.getCardioNo(),reg.getSpecArray("Orthopedics"));
+        System.out.println(out7);
+     String out8 = report.genReport(day,reg.getCardioNo(),reg.getSpecArray("Urology"));
+        System.out.println(out8);
+     String out9 = report.genReport(day,reg.getCardioNo(),reg.getSpecArray("Surgery"));
+        System.out.println(out9);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

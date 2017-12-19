@@ -13,39 +13,40 @@ public class Register {
     /**
      *
      */
-    //public ArrayList cardioDocs = new ArrayList<Cardiology>();
+
     private final Cardiology[] cardioDocs = new Cardiology[10];
     private int cardioNo = 0;
-    //public ArrayList pulmDocs =  new ArrayList<Pulmonology>();
+
     private final Pulmonology[] pulmDocs = new Pulmonology[10];
     private int pulmNo = 0;
-    //public ArrayList infDocs = new ArrayList<InfectiousDisease>();
+
     private final InfectiousDisease[] infDocs = new InfectiousDisease[10];
     private int infNo = 0;
-    //public ArrayList hemDocs = new ArrayList<Hematology>();
+
     private final Hematology[] hemDocs = new Hematology[10];
     private int hemNo = 0;
-    //public ArrayList intDocs = new ArrayList<IntensiveCareMedicine>();
+
     private final IntensiveCareMedicine[] intDocs = new IntensiveCareMedicine[10];
     private int intNo = 0;
     //break
-    //public ArrayList neuroDocs = new ArrayList<Neurology>();
+
     private final Neurology[] neuroDocs = new Neurology[10];
     private int neuroNo = 0;
-    //public ArrayList eyeDocs = new ArrayList<Ophthalmology>();
+
+    
     private final Ophthalmology[] eyeDocs = new Ophthalmology[10];
     private int eyeNo = 0;
-    //public ArrayList orthoDocs = new ArrayList <Orthopedics>();
+
     private final Orthopedics[] orthoDocs = new Orthopedics[10];
     private int orthoNo = 0;
-    //public ArrayList uroDocs = new ArrayList<Urology>();
+
     private final Urology[] uroDocs = new Urology[10];
     private int uroNo = 0;
-    //public ArrayList surgDocs = new ArrayList<Surgery>();
+
     private final Surgery[] surgDocs = new Surgery[10];
     private int surgNo = 0;
     //list of Doctors   
-    public Object[] list = {cardioDocs, pulmDocs, infDocs, hemDocs, intDocs, neuroDocs, eyeDocs, orthoDocs, uroDocs, surgDocs};
+   // ArrayList fullList = new ArrayList();
     int docsNo = 0;
 
     public Register() {
